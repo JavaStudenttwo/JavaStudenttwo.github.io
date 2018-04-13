@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ZTree," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CycloneKid的个人博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="在页面中使用zTree插件添加菜单栏功能">
+<meta name="keywords" content="ZTree">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery-zTree插件使用">
+<meta property="og:url" content="http://yoursite.com/2018/04/02/jQuery-zTree插件使用/index.html">
+<meta property="og:site_name" content="CycloneKid的个人博客">
+<meta property="og:description" content="在页面中使用zTree插件添加菜单栏功能">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/myimg/9.jpg">
+<meta property="og:updated_time" content="2018-04-13T13:44:05.716Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery-zTree插件使用">
+<meta name="twitter:description" content="在页面中使用zTree插件添加菜单栏功能">
+<meta name="twitter:image" content="http://yoursite.com/myimg/9.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/02/jQuery-zTree插件使用/"/>
+
+
+
+
+
+  <title>jQuery-zTree插件使用 | CycloneKid的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CycloneKid的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">使用Hexo+GitHub搭建的个人博客 用于总结我平时学习的一些知识</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/02/jQuery-zTree插件使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CycloneKid">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/myimg/1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CycloneKid的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery-zTree插件使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T10:32:17+08:00">
+                2018-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/JQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">JQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="/myimg/9.jpg" rel="gallery_cjfy0vfnz00227ovgpr9e3pba"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/myimg/9.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p>在页面中使用zTree插件添加菜单栏功能<br><a id="more"></a></p>
+<h1 id="一-zTree插件入门"><a href="#一-zTree插件入门" class="headerlink" title="一.zTree插件入门"></a>一.zTree插件入门</h1><h2 id="1-zTree简介"><a href="#1-zTree简介" class="headerlink" title="1.zTree简介"></a>1.zTree简介</h2><p>ZTree 是一个依靠 jQuery 实现的多功能 “树插件”。优异的性能、灵活的配置、多种功能的组合是 ZTree 最大优点。</p>
+<h2 id="2-zTree插件的核心文件"><a href="#2-zTree插件的核心文件" class="headerlink" title="2.zTree插件的核心文件"></a>2.zTree插件的核心文件</h2><p>ztree官网：在地址栏中输入ztree.me</p>
+<p>ztree官网可以查看在线API，也可以下载最新的ztree插件包（放置在码云上）</p>
+<p><img src="http://img.blog.csdn.net/20170924122607766?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>下载ztree插件包，目录结构如下，其中api文件夹下是ztree插件的离线API文档，css文件夹下是ztree插件的样式文件，demo文件夹下有ztree插件实现的效果的展示，js文件夹下是ztree插件的核心文件</p>
+<p><img src="http://img.blog.csdn.net/20170924122936440?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>打开js文件夹，发现其中有一个jquery的核心文件，说明ztree的使用需要jquery核心的支持。其他10个文件则是ztree的核心文件，这10文件实际上是5个文件，因为每个文件都有一个完整版和一个简洁版（名称中带有.min），简洁版是在完整版的基础上去掉所有空格和换行，为节省空间而创建的，两者代码仍是相同的。</p>
+<p><img src="http://img.blog.csdn.net/20170924123218252?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="3-zTree插件的API"><a href="#3-zTree插件的API" class="headerlink" title="3.zTree插件的API"></a>3.zTree插件的API</h2><p><img src="http://img.blog.csdn.net/20170923213414076?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="API的主要内容："><a href="#API的主要内容：" class="headerlink" title="API的主要内容："></a>API的主要内容：</h3><h4 id="1-zTree的方法"><a href="#1-zTree的方法" class="headerlink" title="1.zTree的方法"></a>1.zTree的方法</h4><p>树的构造，销毁，获取等方法</p>
+<h4 id="2-setting-配置"><a href="#2-setting-配置" class="headerlink" title="2.setting 配置"></a>2.setting 配置</h4><p>用于ztree树的相关配置信息</p>
+<h4 id="3-treeNode-节点数据的属性"><a href="#3-treeNode-节点数据的属性" class="headerlink" title="3.treeNode 节点数据的属性"></a>3.treeNode 节点数据的属性</h4><p>构成树的数据的信息和配置</p>
+<h1 id="二-构造一个zTree树"><a href="#二-构造一个zTree树" class="headerlink" title="二.构造一个zTree树"></a>二.构造一个zTree树</h1><h2 id="1-zTree树的构造方法"><a href="#1-zTree树的构造方法" class="headerlink" title="1.zTree树的构造方法"></a>1.zTree树的构造方法</h2><p><img src="http://img.blog.csdn.net/20170923214617038?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>使用ZTreeAPI中的$.fn.zTree对象的init()方法<br>第一个参数是树对象的id，第二个参数是树对象的配置（参考API文档的setting配置），第三个参数是树对象的数据（参考API文档的treeNode节点数据属性），其是一个json格式的数据</p>
+<h2 id="2-zTree树的节点数据格式"><a href="#2-zTree树的节点数据格式" class="headerlink" title="2.zTree树的节点数据格式"></a>2.zTree树的节点数据格式</h2><p>###1.标准json数据格式</p>
+<p>setting配置采用默认配置，zNodes节点数据采用标准json数据格式，例如：</p>
+<p>zNodes节点数据对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//每个json对象表示一个节点数据</span><br><span class="line">&#123;&quot;name&quot;:&quot;节点一&quot;,&quot;children&quot;:[</span><br><span class="line">			&#123;&quot;name&quot;:&quot;节点一_1&quot;&#125;,</span><br><span class="line">			&#123;&quot;name&quot;:&quot;节点一_2&quot;&#125;</span><br><span class="line">						    ]&#125;,</span><br><span class="line">&#123;&quot;name&quot;:&quot;节点二&quot;&#125;,</span><br><span class="line">&#123;&quot;name&quot;:&quot;节点三&quot;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p><img src="http://img.blog.csdn.net/20170923220843003?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>总结：使用标准json数据格式构造zTree树时数据组织非常麻烦，zTree提供了更为简单的数据格式取代了标准json数据格式</p>
+<p>###2.使用简单json数据构造zTree</p>
+<p>步骤1.在setting中设置使用简单数据格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var setting = &#123;</span><br><span class="line">                data : &#123;</span><br><span class="line">	                // 设置是否启用简单数据</span><br><span class="line">                    simpleData : &#123; </span><br><span class="line">                        enable : true</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                callback : &#123;</span><br><span class="line">                    onClick : onClick</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>步骤二.zNodes节点数据对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;id&quot;:&quot;1&quot;,&quot;pId&quot;:&quot;2&quot;,&quot;name&quot;:&quot;节点一&quot;&#125;,</span><br><span class="line">&#123;&quot;id&quot;:&quot;2&quot;,&quot;pId&quot;:&quot;3&quot;,&quot;name&quot;:&quot;节点二&quot;&#125;,</span><br><span class="line">&#123;&quot;id&quot;:&quot;3&quot;,&quot;pId&quot;:&quot;0&quot;,&quot;name&quot;:&quot;节点三&quot;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p><img src="http://img.blog.csdn.net/20170923221333730?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>简单数据格式构建zNodes节点：每个节点数据都有一个独立的id，若A节点的pid和B节点的id对应，那么A节点就是B节点的子节点，若一个节点数据的pid没有和它相对应的id，那么这个节点数据就是根节点<br>总结：简单数据格式清晰易懂，适合节点数据较多较复杂的场景，实际应用中一般采用这种方式</p>
+<h1 id="三-zTree插件实战"><a href="#三-zTree插件实战" class="headerlink" title="三.zTree插件实战"></a>三.zTree插件实战</h1><p><img src="http://img.blog.csdn.net/20170923210815605?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>目标：实现如上图所示的zTree树</p>
+<h2 id="1-导入zTree的核心及支持类库"><a href="#1-导入zTree的核心及支持类库" class="headerlink" title="1.导入zTree的核心及支持类库"></a>1.导入zTree的核心及支持类库</h2><p>zTree插件的核心文件放路径根据实际情况修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 导入jquery核心类库 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;</span><br><span class="line">		src=&quot;$&#123;pageContext.request.contextPath &#125;/js/jquery-1.8.3.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 导入ztree类库 --&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot;</span><br><span class="line">	  href=&quot;$&#123;pageContext.request.contextPath &#125;/js/ztree/zTreeStyle.css&quot;</span><br><span class="line">	  type=&quot;text/css&quot; /&gt;</span><br><span class="line">&lt;script</span><br><span class="line">		src=&quot;$&#123;pageContext.request.contextPath &#125;/js/ztree/jquery.ztree.all-3.5.js&quot;</span><br><span class="line">		type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script</span><br><span class="line">		src=&quot;$&#123;pageContext.request.contextPath &#125;/js/easyui/locale/easyui-lang-zh_CN.js&quot;</span><br><span class="line">		type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-在页面部分创建zTree对象"><a href="#2-在页面部分创建zTree对象" class="headerlink" title="2.在页面部分创建zTree对象"></a>2.在页面部分创建zTree对象</h2><p>页面代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div data-options=&quot;region:&apos;west&apos;,split:true,title:&apos;菜单导航&apos;&quot;</span><br><span class="line">	 style=&quot;width:200px&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;easyui-accordion&quot; fit=&quot;true&quot; border=&quot;false&quot;&gt;</span><br><span class="line">		&lt;div title=&quot;基本功能&quot; data-options=&quot;iconCls:&apos;icon-mini-add&apos;&quot; style=&quot;overflow:auto&quot;&gt;</span><br><span class="line">			&lt;ul id=&quot;treeMenu&quot; class=&quot;ztree&quot;&gt;&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div title=&quot;系统管理&quot; data-options=&quot;iconCls:&apos;icon-mini-add&apos;&quot; style=&quot;overflow:auto&quot;&gt;</span><br><span class="line">			&lt;ul id=&quot;adminMenu&quot; class=&quot;ztree&quot;&gt;&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>accordion面板中定义两个选项，每个选项中定义一个ul行内标签，设置标签<strong>class属性为ztree类型</strong></p>
+<p><img src="http://img.blog.csdn.net/20170923211638949?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="3-使用zTree提供的API为节点绑定事件，完成zTree树的加载"><a href="#3-使用zTree提供的API为节点绑定事件，完成zTree树的加载" class="headerlink" title="3.使用zTree提供的API为节点绑定事件，完成zTree树的加载"></a>3.使用zTree提供的API为节点绑定事件，完成zTree树的加载</h2><p>定义upload函数，在页面加载完毕后执行，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">// 初始化ztree菜单</span><br><span class="line">        $(function() &#123;</span><br><span class="line">	        //1.创建setting对象配置zTree树</span><br><span class="line">            var setting = &#123;</span><br><span class="line">                data : &#123;</span><br><span class="line">	                // 采用简单数据格式</span><br><span class="line">                    simpleData : &#123; </span><br><span class="line">                        enable : true</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                callback : &#123;</span><br><span class="line">                    onClick : onClick</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            // 2.基本功能菜单加载</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">	            //通过url路径下的静态资源（json格式的数据）构建zNodes节点数据</span><br><span class="line">                url : &apos;$&#123;pageContext.request.contextPath&#125;/json/menu.json&apos;,</span><br><span class="line">                type : &apos;POST&apos;,</span><br><span class="line">                dataType : &apos;text&apos;,</span><br><span class="line">                success : function(data) &#123;</span><br><span class="line">	                //创建zNodes对象</span><br><span class="line">                    var zNodes = eval(&quot;(&quot; + data + &quot;)&quot;);</span><br><span class="line">                    //3.调用init()方法完成zTree树的加载</span><br><span class="line">                    $.fn.zTree.init($(&quot;#treeMenu&quot;), setting, zNodes);</span><br><span class="line">                &#125;,</span><br><span class="line">                error : function(msg) &#123;</span><br><span class="line">                    alert(&apos;菜单加载异常!&apos;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            // 系统管理菜单加载</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url : &apos;$&#123;pageContext.request.contextPath&#125;/json/admin.json&apos;,</span><br><span class="line">                type : &apos;POST&apos;,</span><br><span class="line">                dataType : &apos;text&apos;,</span><br><span class="line">                success : function(data) &#123;</span><br><span class="line">                    var zNodes = eval(&quot;(&quot; + data + &quot;)&quot;);</span><br><span class="line">                    $.fn.zTree.init($(&quot;#adminMenu&quot;), setting, zNodes);</span><br><span class="line">                &#125;,</span><br><span class="line">                error : function(msg) &#123;</span><br><span class="line">                    alert(&apos;菜单加载异常!&apos;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure></p>
+<p>项目中的menu.json文件中的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">		&#123; &quot;id&quot;:&quot;11&quot;, &quot;pId&quot;:&quot;0&quot;, &quot;name&quot;:&quot;基础数据&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;112&quot;, &quot;pId&quot;:&quot;11&quot;, &quot;name&quot;:&quot;取派员设置&quot;,  &quot;page&quot;:&quot;page_base_staff.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;113&quot;, &quot;pId&quot;:&quot;11&quot;, &quot;name&quot;:&quot;区域设置&quot;,&quot;page&quot;:&quot;page_base_region.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;114&quot;, &quot;pId&quot;:&quot;11&quot;, &quot;name&quot;:&quot;管理分区&quot;, &quot;page&quot;:&quot;page_base_subarea.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;115&quot;, &quot;pId&quot;:&quot;11&quot;, &quot;name&quot;:&quot;管理定区/调度排班&quot;,&quot;page&quot;:&quot;page_base_decidedzone.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;12&quot;, &quot;pId&quot;:&quot;0&quot;, &quot;name&quot;:&quot;受理&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;121&quot;, &quot;pId&quot;:&quot;12&quot;, &quot;name&quot;:&quot;业务受理&quot; ,&quot;page&quot;:&quot;page_qupai_noticebill_add.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;122&quot;, &quot;pId&quot;:&quot;12&quot;, &quot;name&quot;:&quot;工作单快速录入&quot; ,&quot;page&quot;:&quot;page_qupai_quickworkorder.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;124&quot;, &quot;pId&quot;:&quot;12&quot;, &quot;name&quot;:&quot;工作单导入&quot; ,&quot;page&quot;:&quot;page_qupai_workorderimport.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;13&quot;, &quot;pId&quot;:&quot;0&quot;, &quot;name&quot;:&quot;调度&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;131&quot;, &quot;pId&quot;:&quot;13&quot;, &quot;name&quot;:&quot;查台转单&quot;,&quot;page&quot;:&quot;&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;132&quot;, &quot;pId&quot;:&quot;13&quot;, &quot;name&quot;:&quot;人工调度&quot;,&quot;page&quot;:&quot;page_qupai_diaodu.action&quot;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>项目中的admin.json文件中的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">		&#123; &quot;id&quot;:&quot;1001&quot;, &quot;pId&quot;:&quot;100&quot;, &quot;name&quot;:&quot;用户管理&quot;, &quot;page&quot;:&quot;page_admin_userlist.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;1002&quot;, &quot;pId&quot;:&quot;100&quot;, &quot;name&quot;:&quot;功能权限管理&quot;, &quot;page&quot;:&quot;page_admin_function.action&quot;&#125;,</span><br><span class="line">		&#123; &quot;id&quot;:&quot;1003&quot;, &quot;pId&quot;:&quot;100&quot;, &quot;name&quot;:&quot;角色管理&quot;, &quot;page&quot;:&quot;page_admin_role.action&quot;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ZTree/" rel="tag"># ZTree</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/28/Java设计模式--代理模式与JDK动态代理，cglib动态代理/" rel="next" title="Java设计模式--代理模式与JDK动态代理，cglib动态代理">
+                <i class="fa fa-chevron-left"></i> Java设计模式--代理模式与JDK动态代理，cglib动态代理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/06/JSP技术-02-内置对象_作用域_EL表达式_JSTL标签库 /" rel="prev" title="JSP技术-02-内置对象_作用域_EL表达式_JSTL标签库">
+                JSP技术-02-内置对象_作用域_EL表达式_JSTL标签库 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/myimg/1.gif"
+                alt="CycloneKid" />
+            
+              <p class="site-author-name" itemprop="name">CycloneKid</p>
+              <p class="site-description motion-element" itemprop="description">一位在校大学生的学习笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JavaStudenttwo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:sk18810356@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kuang-da-zhi-yin/activities" target="_blank" title="ZhiHu">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>ZhiHu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/eagleuniversityeye" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-skype"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/eagleuniversityeye" title="我的CSDN博客" target="_blank">我的CSDN博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-zTree插件入门"><span class="nav-number">1.</span> <span class="nav-text">一.zTree插件入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-zTree简介"><span class="nav-number">1.1.</span> <span class="nav-text">1.zTree简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-zTree插件的核心文件"><span class="nav-number">1.2.</span> <span class="nav-text">2.zTree插件的核心文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-zTree插件的API"><span class="nav-number">1.3.</span> <span class="nav-text">3.zTree插件的API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#API的主要内容："><span class="nav-number">1.3.1.</span> <span class="nav-text">API的主要内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-zTree的方法"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">1.zTree的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-setting-配置"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">2.setting 配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-treeNode-节点数据的属性"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">3.treeNode 节点数据的属性</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-构造一个zTree树"><span class="nav-number">2.</span> <span class="nav-text">二.构造一个zTree树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-zTree树的构造方法"><span class="nav-number">2.1.</span> <span class="nav-text">1.zTree树的构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-zTree树的节点数据格式"><span class="nav-number">2.2.</span> <span class="nav-text">2.zTree树的节点数据格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-zTree插件实战"><span class="nav-number">3.</span> <span class="nav-text">三.zTree插件实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-导入zTree的核心及支持类库"><span class="nav-number">3.1.</span> <span class="nav-text">1.导入zTree的核心及支持类库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-在页面部分创建zTree对象"><span class="nav-number">3.2.</span> <span class="nav-text">2.在页面部分创建zTree对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用zTree提供的API为节点绑定事件，完成zTree树的加载"><span class="nav-number">3.3.</span> <span class="nav-text">3.使用zTree提供的API为节点绑定事件，完成zTree树的加载</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CycloneKid</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
