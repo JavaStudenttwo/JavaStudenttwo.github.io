@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="承接上一篇博客设计模式-02-创建型模式详解，本篇讨论结构型模式的相关内容 ##一.适配器模式双方都不适合修改的时候，可以考虑使用适配器模式  ####代码举例： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950//例一#include &amp;lt;iostream&amp;g">
+<meta name="keywords" content="叼">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CycloneKid的个人博客">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/设计模式-03-结构型模式详解/index.html">
+<meta property="og:site_name" content="CycloneKid的个人博客">
+<meta property="og:description" content="承接上一篇博客设计模式-02-创建型模式详解，本篇讨论结构型模式的相关内容 ##一.适配器模式双方都不适合修改的时候，可以考虑使用适配器模式  ####代码举例： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950//例一#include &amp;lt;iostream&amp;g">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.blog.csdn.net/20180228232653548?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20180228232843649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20180301121121843?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20180301121258444?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20180301121354175?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20180301121456744?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20180228232843649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-04-13T06:42:33.861Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CycloneKid的个人博客">
+<meta name="twitter:description" content="承接上一篇博客设计模式-02-创建型模式详解，本篇讨论结构型模式的相关内容 ##一.适配器模式双方都不适合修改的时候，可以考虑使用适配器模式  ####代码举例： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950//例一#include &amp;lt;iostream&amp;g">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20180228232653548?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/设计模式-03-结构型模式详解/"/>
+
+
+
+
+
+  <title> | CycloneKid的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CycloneKid的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习内容总结</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/设计模式-03-结构型模式详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CycloneKid">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/myimg/1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CycloneKid的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T14:42:33+08:00">
+                2018-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>承接上一篇博客<a href="http://blog.csdn.net/eagleuniversityeye/article/details/79406961#t1" target="_blank" rel="noopener">设计模式-02-创建型模式详解</a>，本篇讨论结构型模式的相关内容</p>
+<p>##一.适配器模式<br>双方都不适合修改的时候，可以考虑使用适配器模式</p>
+<p><img src="http://img.blog.csdn.net/20180228232653548?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####代码举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">//例一</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Target</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Request()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;普通的请求&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Adaptee</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	void SpecificalRequest()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;特殊请求&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Adapter :public  Target</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	Adaptee* ada;</span><br><span class="line">public:</span><br><span class="line">	virtual void Request()</span><br><span class="line">	&#123;</span><br><span class="line">		ada-&gt;SpecificalRequest();</span><br><span class="line">		Target::Request();</span><br><span class="line">	&#125;</span><br><span class="line">	Adapter()</span><br><span class="line">	&#123;</span><br><span class="line">		ada=new Adaptee();</span><br><span class="line">	&#125;</span><br><span class="line">	~Adapter()</span><br><span class="line">	&#123;</span><br><span class="line">		delete ada;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端：</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Adapter * ada=new Adapter();</span><br><span class="line">	ada-&gt;Request();</span><br><span class="line">	delete ada;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">//例二</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Player</span><br><span class="line">&#123;</span><br><span class="line">protected:</span><br><span class="line">	string name;</span><br><span class="line">public:</span><br><span class="line">	Player(string strName) &#123; name = strName; &#125;</span><br><span class="line">	virtual void Attack()=0;</span><br><span class="line">	virtual void Defense()=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Forwards : public Player</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Forwards(string strName):Player(strName)&#123;&#125;</span><br><span class="line">public:</span><br><span class="line">	virtual void Attack()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;name&lt;&lt;&quot;前锋进攻&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Defense()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;name&lt;&lt;&quot;前锋防守&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Center : public Player</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Center(string strName):Player(strName)&#123;&#125;</span><br><span class="line">public:</span><br><span class="line">	virtual void Attack()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;name&lt;&lt;&quot;中场进攻&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Defense()</span><br><span class="line">	&#123;</span><br><span class="line">	    cout&lt;&lt;name&lt;&lt;&quot;中场防守&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//为中场翻译</span><br><span class="line">class TransLater: public Player</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	Center *player;</span><br><span class="line">public:</span><br><span class="line">	TransLater(string strName):Player(strName)</span><br><span class="line">	&#123;</span><br><span class="line">		player = new Center(strName);</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Attack()</span><br><span class="line">	&#123;</span><br><span class="line">		player-&gt;Attack();</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Defense()</span><br><span class="line">	&#123;</span><br><span class="line">		player-&gt;Defense();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Player *p=new TransLater(&quot;小李&quot;);</span><br><span class="line">	p-&gt;Attack();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##二.桥接模式<br>将抽象部分与实现部分分离，使它们可以独立变化。<br>这里说的意思不是让抽象基类与具体类分离，而是现实系统可能有多角度分类，每一种分类都有可能变化，那么把这种多角度分离出来让它们独立变化，减少它们之间的耦合性，即如果继承不能实现“开放－封闭原则”的话，就应该考虑用桥接模式。</p>
+<p><img src="http://img.blog.csdn.net/20180228232843649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####代码举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//手机软件</span><br><span class="line">class HandsetSoft</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Run()=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//游戏软件</span><br><span class="line">class HandsetGame : public HandsetSoft</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Run()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;运行手机游戏&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//通讯录软件</span><br><span class="line">class HandSetAddressList : public HandsetSoft</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Run()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;手机通讯录&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//手机品牌</span><br><span class="line">class HandsetBrand</span><br><span class="line">&#123;</span><br><span class="line">protected:</span><br><span class="line">	HandsetSoft* m_soft;</span><br><span class="line">public:</span><br><span class="line">	void SetHandsetSoft(HandsetSoft* temp)</span><br><span class="line">	&#123;</span><br><span class="line">		m_soft = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Run()=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//M品牌</span><br><span class="line">class HandsetBrandM : public HandsetBrand</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Run()</span><br><span class="line">	&#123;</span><br><span class="line">		m_soft-&gt;Run();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//N品牌</span><br><span class="line">class HandsetBrandN : public HandsetBrand</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Run()</span><br><span class="line">	&#123;</span><br><span class="line">		m_soft-&gt;Run();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	HandsetBrand *brand;</span><br><span class="line">	brand = new HandsetBrandM();</span><br><span class="line">	brand-&gt;SetHandsetSoft(new HandsetGame());</span><br><span class="line">	brand-&gt;Run();</span><br><span class="line">	brand-&gt;SetHandsetSoft(new HandSetAddressList());</span><br><span class="line">	brand-&gt;Run();</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##三.组合模式<br>整体和部分可以被一致对待（如WORD中复制一个文字、一段文字、一篇文章都是一样的操作）</p>
+<p><img src="http://img.blog.csdn.net/20180301121121843?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####代码举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Component</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	string m_strName;</span><br><span class="line">	Component(string strName)</span><br><span class="line">	&#123;</span><br><span class="line">		m_strName = strName;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Add(Component* com)=0;</span><br><span class="line">	virtual void Display(int nDepth)=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Leaf : public Component</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Leaf(string strName): Component(strName)&#123;&#125;</span><br><span class="line"></span><br><span class="line">	virtual void Add(Component* com)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;leaf can&apos;t add&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	virtual void Display(int nDepth)</span><br><span class="line">	&#123;</span><br><span class="line">		string strtemp;</span><br><span class="line">		for(int i=0; i &lt; nDepth; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			strtemp+=&quot;-&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		strtemp += m_strName;</span><br><span class="line">		cout&lt;&lt;strtemp&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Composite : public Component</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	vector&lt;Component*&gt; m_component;</span><br><span class="line">public:</span><br><span class="line">	Composite(string strName) : Component(strName)&#123;&#125;</span><br><span class="line"></span><br><span class="line">	virtual void Add(Component* com)</span><br><span class="line">	&#123;</span><br><span class="line">		m_component.push_back(com);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	virtual void Display(int nDepth)</span><br><span class="line">	&#123;</span><br><span class="line">		string strtemp;</span><br><span class="line">		for(int i=0; i &lt; nDepth; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			strtemp+=&quot;-&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		strtemp += m_strName;</span><br><span class="line">		cout&lt;&lt;strtemp&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">		vector&lt;Component*&gt;::iterator p=m_component.begin();</span><br><span class="line">		while (p!=m_component.end())</span><br><span class="line">		&#123;</span><br><span class="line">			(*p)-&gt;Display(nDepth+2); </span><br><span class="line">			p++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">#include &quot;Model.h&quot;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Composite* p=new Composite(&quot;小王&quot;);</span><br><span class="line">	p-&gt;Add(new Leaf(&quot;小李&quot;));</span><br><span class="line">	p-&gt;Add(new Leaf(&quot;小赵&quot;));</span><br><span class="line"></span><br><span class="line">	Composite* p1 = new Composite(&quot;小小五&quot;);</span><br><span class="line">	p1-&gt;Add(new Leaf(&quot;大三&quot;));</span><br><span class="line"></span><br><span class="line">	p-&gt;Add(p1);</span><br><span class="line">	p-&gt;Display(1);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##四.装饰器模式<br>动态地给一个对象添加一些额外的职责（不重要的功能，只是偶然一次要执行），就增加功能来说，装饰模式比生成子类更为灵活。建造过程不稳定，按正确的顺序串联起来进行控制。<br>当你向旧的类中添加新代码时，一般是为了添加核心职责或主要行为。而当需要加入的仅仅是一些特定情况下才会执行的特定的功能时（简单点就是不是核心应用的功能），就会增加类的复杂度。装饰模式就是把要添加的附加功能分别放在单独的类中，并让这个类包含它要装饰的对象，当需要执行时，客户端就可以有选择地、按顺序地使用装饰功能包装对象。</p>
+<p><img src="http://img.blog.csdn.net/20180301121258444?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####代码举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//人</span><br><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	string m_strName;</span><br><span class="line">public:</span><br><span class="line">	Person(string strName)</span><br><span class="line">	&#123;</span><br><span class="line">		m_strName=strName;</span><br><span class="line">	&#125;</span><br><span class="line">	Person()&#123;&#125;</span><br><span class="line">	virtual void Show()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;装扮的是:&quot;&lt;&lt;m_strName&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">//装饰类</span><br><span class="line">class Finery :public Person</span><br><span class="line">&#123;</span><br><span class="line">protected:</span><br><span class="line">	Person* m_component;</span><br><span class="line">public:</span><br><span class="line">	void Decorate(Person* component)</span><br><span class="line">	&#123;</span><br><span class="line">		m_component=component;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Show()</span><br><span class="line">	&#123;</span><br><span class="line">		   m_component-&gt;Show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//T恤</span><br><span class="line">class TShirts: public Finery</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Show()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;T Shirts&quot;&lt;&lt;endl;</span><br><span class="line">		m_component-&gt;Show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//裤子</span><br><span class="line">class BigTrouser :public  Finery</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Show()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot; Big Trouser&quot;&lt;&lt;endl;</span><br><span class="line">		m_component-&gt;Show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Person *p=new Person(&quot;小李&quot;);</span><br><span class="line">	BigTrouser *bt=new BigTrouser();</span><br><span class="line">	TShirts *ts=new TShirts();</span><br><span class="line"></span><br><span class="line">	bt-&gt;Decorate(p);</span><br><span class="line">	ts-&gt;Decorate(bt);</span><br><span class="line">	ts-&gt;Show();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##五.外观模式<br>为子系统的一组接口提供一个一致的界面。使用户使用起来更加方便。</p>
+<p><img src="http://img.blog.csdn.net/20180301121354175?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####代码举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class SubSysOne</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	void MethodOne()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;方法一&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class SubSysTwo</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	void MethodTwo()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;方法二&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class SubSysThree</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	void MethodThree()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;方法三&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//外观类</span><br><span class="line">class Facade</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	SubSysOne* sub1;</span><br><span class="line">	SubSysTwo* sub2;</span><br><span class="line">	SubSysThree* sub3;</span><br><span class="line">public:</span><br><span class="line">	Facade()</span><br><span class="line">	&#123;</span><br><span class="line">		sub1 = new SubSysOne();</span><br><span class="line">		sub2 = new SubSysTwo();</span><br><span class="line">		sub3 = new SubSysThree();</span><br><span class="line">	&#125;</span><br><span class="line">	~Facade()</span><br><span class="line">	&#123;</span><br><span class="line">		delete sub1;</span><br><span class="line">		delete sub2;</span><br><span class="line">		delete sub3;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	void FacadeMethod()</span><br><span class="line">	&#123;</span><br><span class="line">		sub1-&gt;MethodOne();</span><br><span class="line">		sub2-&gt;MethodTwo();</span><br><span class="line">		sub3-&gt;MethodThree();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Facade* test = new Facade();</span><br><span class="line">	test-&gt;FacadeMethod();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##六.享元模式<br>运用共享技术有效地支持大量细粒度的对象（对于C++来说就是共用一个内存块啦，对象指针指向同一个地方）。<br>如果一个应用程序使用了大量的对象，而这些对象造成了很大的存储开销就应该考虑使用。<br>还有就是对象的大多数状态可以外部状态，如果删除对象的外部状态，那么可以用较少的共享对象取代多组对象，此时可以考虑使用享元。</p>
+<p><img src="http://img.blog.csdn.net/20180301121456744?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####代码举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//抽象的网站</span><br><span class="line">class WebSite</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Use()=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//具体的共享网站</span><br><span class="line">class ConcreteWebSite : public WebSite</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	string name;</span><br><span class="line">public:</span><br><span class="line">	ConcreteWebSite(string strName)</span><br><span class="line">	&#123;</span><br><span class="line">		name = strName;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Use()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;网站分类：&quot;&lt;&lt;name&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//不共享的网站</span><br><span class="line">class UnShareWebSite : public WebSite</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	string name;</span><br><span class="line">public:</span><br><span class="line">	UnShareWebSite(string strName)</span><br><span class="line">	&#123;</span><br><span class="line">		name = strName;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void Use()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;不共享的网站：&quot;&lt;&lt;name&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//网站工厂类，用于存放共享的WebSite对象</span><br><span class="line">class WebFactory</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	vector&lt;WebSite*&gt; websites;</span><br><span class="line">public:</span><br><span class="line">	WebSite* GetWeb()</span><br><span class="line">	&#123;</span><br><span class="line">		vector&lt;WebSite*&gt;::iterator p = websites.begin();</span><br><span class="line">		return *p;</span><br><span class="line">	&#125;</span><br><span class="line">	WebFactory()</span><br><span class="line">	&#123;</span><br><span class="line">		websites.push_back(new ConcreteWebSite(&quot;测试&quot;));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	WebFactory* f= new WebFactory();</span><br><span class="line">	WebSite* ws= f-&gt;GetWeb();</span><br><span class="line">	ws-&gt;Use();</span><br><span class="line"></span><br><span class="line">	WebSite* ws2 = f-&gt;GetWeb();</span><br><span class="line">	ws2-&gt;Use();</span><br><span class="line"></span><br><span class="line">	//不共享的类</span><br><span class="line">	WebSite* ws3 = new UnShareWebSite(&quot;测试&quot;);</span><br><span class="line">	ws3-&gt;Use();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##七.代理模式<br>远程代理：可以隐藏一个对象在不同地址空间的事实<br>虚拟代理：通过代理来存放需要很长时间实例化的对象<br>安全代理：用来控制真实对象的访问权限<br>智能引用：当调用真实对象时，代理处理另外一些事</p>
+<p><img src="http://img.blog.csdn.net/20180228232843649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####代码举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//定义接口</span><br><span class="line">class Interface</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Request()=0;</span><br><span class="line">&#125;;</span><br><span class="line">//真实类</span><br><span class="line">class RealClass : public Interface</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Request()</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;真实的请求&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//代理类</span><br><span class="line">class ProxyClass : public Interface</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	RealClass* m_realClass;</span><br><span class="line">public:</span><br><span class="line">	virtual void Request()</span><br><span class="line">	&#123;</span><br><span class="line">	    m_realClass= new RealClass();</span><br><span class="line">		m_realClass-&gt;Request();</span><br><span class="line">		delete m_realClass;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">客户端：</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ProxyClass* test=new ProxyClass();</span><br><span class="line">	test-&gt;Request();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/13/设计模式-04-行为型模式详解/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/13/设计模式-02-创建型模式详解/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/myimg/1.gif"
+                alt="CycloneKid" />
+            
+              <p class="site-author-name" itemprop="name">CycloneKid</p>
+              <p class="site-description motion-element" itemprop="description">一位在校大学生的学习笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JavaStudenttwo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:sk18810356@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kuang-da-zhi-yin/activities" target="_blank" title="ZhiHu">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>ZhiHu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/eagleuniversityeye" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-skype"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/kinglearnjava" title="我的CSDN博客" target="_blank">我的CSDN博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.sina.com.cn/u/1069913250" title="我的新浪博客" target="_blank">我的新浪博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CycloneKid</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

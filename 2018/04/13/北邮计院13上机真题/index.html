@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#A  日期 ###题目及要求 Accept:207        Submit:852Time Limit:1000MS        Memory Limit:65536KBDescription请你计算出第X年Y月Z日是第X年的第几天。其中，1月1日是第一天，1月2日是第二天，以此类推。计算时请注意闰年的影响。对于非整百年，年数能整除4是闰年，否则不是闰年；对于整百年，年数能整除400是闰年">
+<meta name="keywords" content="叼">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CycloneKid的个人博客">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/北邮计院13上机真题/index.html">
+<meta property="og:site_name" content="CycloneKid的个人博客">
+<meta property="og:description" content="#A  日期 ###题目及要求 Accept:207        Submit:852Time Limit:1000MS        Memory Limit:65536KBDescription请你计算出第X年Y月Z日是第X年的第几天。其中，1月1日是第一天，1月2日是第二天，以此类推。计算时请注意闰年的影响。对于非整百年，年数能整除4是闰年，否则不是闰年；对于整百年，年数能整除400是闰年">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-13T06:41:47.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CycloneKid的个人博客">
+<meta name="twitter:description" content="#A  日期 ###题目及要求 Accept:207        Submit:852Time Limit:1000MS        Memory Limit:65536KBDescription请你计算出第X年Y月Z日是第X年的第几天。其中，1月1日是第一天，1月2日是第二天，以此类推。计算时请注意闰年的影响。对于非整百年，年数能整除4是闰年，否则不是闰年；对于整百年，年数能整除400是闰年">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/北邮计院13上机真题/"/>
+
+
+
+
+
+  <title> | CycloneKid的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CycloneKid的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习内容总结</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/北邮计院13上机真题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CycloneKid">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/myimg/1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CycloneKid的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T14:41:47+08:00">
+                2018-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#A  日期</p>
+<p>###题目及要求</p>
+<p>Accept:207        Submit:852<br>Time Limit:1000MS        Memory Limit:65536KB<br>Description<br>请你计算出第X年Y月Z日是第X年的第几天。其中，1月1日是第一天，1月2日是第二天，以此类推。<br>计算时请注意闰年的影响。对于非整百年，年数能整除4是闰年，否则不是闰年；对于整百年，年数能整除400是闰年，否则不是闰年。如1900年和1901年不是闰年，而2000年和2004年是闰年。<br>InputFormat<br>第一行有一个整数T($T\leq100$)，表示一共有T组数据需要你处理。<br>接下来一共有T行，每行是一个如下格式的字符串：X:Y:Z，表示你需要计算第X年Y月Z日是第X年的第几天。其中X是一个大于0，小于2100的整数。保证字符串的格式都是合法的，字符串所表示的日期也都是存在的。<br>OutputFormat<br>对于每组数据，你需要输出一个整数，表示所求得的结果。<br>SampleInput<br>2<br>2013:4:12<br>112:4:12<br>SampleOutput<br>102<br>103</p>
+<p>###答案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define _CRT_SECURE_NO_WARNINGS</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int data1[13][32] = &#123; 0 &#125;;</span><br><span class="line">int data2[13][32] = &#123; 0 &#125;;</span><br><span class="line">int moth1[13] = &#123; 0,31,28,31,30,31,30,31,31,30,31,30,31 &#125;;</span><br><span class="line">int moth2[13] = &#123; 0,31,29,31,30,31,30,31,31,30,31,30,31 &#125;;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">	int k = 1;</span><br><span class="line">	//非闰年</span><br><span class="line">	for (int j = 1; j&lt;13; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int q = 1; q &lt;= moth1[j]; q++)</span><br><span class="line">		&#123;</span><br><span class="line">			data1[j][q] = k;</span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	k = 1;</span><br><span class="line">	//闰年</span><br><span class="line">	for (int j = 1; j&lt;13; j++)</span><br><span class="line">		for (int q = 1; q &lt;= moth2[j]; q++)</span><br><span class="line">		&#123;</span><br><span class="line">			data2[j][q] = k;</span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	int n;</span><br><span class="line">	while (cin &gt;&gt; n != EOF)   //EOP=-1</span><br><span class="line">	&#123;</span><br><span class="line">		for (int i = 0; i&lt;n; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			int a, b, c;</span><br><span class="line">			cin &gt;&gt; a;</span><br><span class="line">			cin &gt;&gt; b;</span><br><span class="line">			cin &gt;&gt; c;</span><br><span class="line">			if (((a % 4 == 0) &amp;&amp; (a % 100 != 0)) || (a % 400 == 0))</span><br><span class="line">			&#123;</span><br><span class="line">				cout &lt;&lt; data2[b][c] &lt;&lt; endl;</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				cout &lt;&lt; data1[b][c] &lt;&lt; endl;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	//system(&quot;PAUSE&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#B  统计节点个数</p>
+<p>###题目及要求<br>Accept:88        Submit:547<br>Time Limit:1000MS        Memory Limit:65536KB<br>Description<br>给出一棵有向树，一共有<code>N   (1&lt;N≤1000   )</code>个节点，如果一个节点的度（入度+出度）不小于它所有儿子以及它父亲的度(如果存在父亲或儿子)，那么我们称这个节点为p节点，现在你的任务是统计p节点的个数。<br>InputFormat<br>第一行为数据组数<code>T   (1≤T≤100   )</code>。<br>每组数据第一行为N   表示树的节点数。后面为N−1   行，每行两个数<code>x   ,y   (0≤x,y&lt;N   )</code>，代表y   是x   的儿子节点。<br>OutputFormat<br>每组数据输出一行，为一个整数，代表这棵树上p节点的个数。<br>SampleInput<br>2<br>5<br>0 1<br>1 2<br>2 3<br>3 4<br>3<br>0 2<br>0 1<br>SampleOutput<br>3<br>1<br>Hint<br>第一组的p节点为1,2,3；第二组的p节点为0。</p>
+<p>###答案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">       int count;</span><br><span class="line">       int child[1010];</span><br><span class="line">       int father;</span><br><span class="line">&#125;a[1010];</span><br><span class="line">int c[1010]=&#123;0&#125;;</span><br><span class="line">int d[1010]=&#123;-1&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   </span><br><span class="line">    //freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);</span><br><span class="line">    //freopen(&quot;out.txt&quot;,&quot;w&quot;,stdout);</span><br><span class="line">    int t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    for(int i=0;i&lt;t;i++)</span><br><span class="line">    &#123;</span><br><span class="line">            for(int s=0;s&lt;1010;s++)</span><br><span class="line">            &#123;</span><br><span class="line">                    for(int q=0;q&lt;1010;q++)</span><br><span class="line">                    &#123;</span><br><span class="line">                            a[s].child[q]=0;</span><br><span class="line">                    &#125;</span><br><span class="line">                    c[s]=0;</span><br><span class="line">                    a[s].father=0;</span><br><span class="line">                    a[s].count=0;</span><br><span class="line">                    d[s]=-1;</span><br><span class="line">            &#125;</span><br><span class="line">            int n;</span><br><span class="line">            cin&gt;&gt;n;</span><br><span class="line">            for(int j=0;j&lt;n-1;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                  int x,y;</span><br><span class="line">                  cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">                  a[x].count++;</span><br><span class="line">                  a[y].count++;</span><br><span class="line">                  a[y].father=x;</span><br><span class="line">                  a[x].child[c[x]]=y; </span><br><span class="line">                  d[y]++; </span><br><span class="line">                  c[x]++;</span><br><span class="line">            &#125;</span><br><span class="line">            int ans=0;</span><br><span class="line">            for(int j=0;j&lt;n;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                   int flag=1; </span><br><span class="line">                   if(d[j]==-1)</span><br><span class="line">                    &#123;</span><br><span class="line">                         </span><br><span class="line">                         for(int k=0;k&lt;c[j];k++)</span><br><span class="line">                         &#123;</span><br><span class="line">                                 if(a[j].count&lt;a[a[j].child[k]].count)</span><br><span class="line">                                 &#123;</span><br><span class="line">                                      flag=0;</span><br><span class="line">                                      break;</span><br><span class="line">                                 &#125;</span><br><span class="line">                         &#125;   </span><br><span class="line">                    &#125;</span><br><span class="line">                    else if(c[j]!=0)</span><br><span class="line">                    &#123;</span><br><span class="line">                        for(int k=0;k&lt;c[j];k++)</span><br><span class="line">                         &#123;</span><br><span class="line">                                 if(a[j].count&lt;a[a[j].child[k]].count)</span><br><span class="line">                                 &#123;</span><br><span class="line">                                      flag=0;</span><br><span class="line">                                      break;</span><br><span class="line">                                 &#125;</span><br><span class="line">                         &#125; </span><br><span class="line">                         if(a[j].count&lt;a[a[j].father].count) </span><br><span class="line">                          &#123;   flag=0;&#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                    else if(a[j].count&lt;a[a[j].father].count)</span><br><span class="line">                        &#123;flag=0;&#125;</span><br><span class="line">                    if(flag==1)</span><br><span class="line">                      ans++;</span><br><span class="line">            &#125;</span><br><span class="line">            cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#C  中序遍历序列</p>
+<p>###题目及要求<br>Accept:155     Submit:502<br>Time Limit:1000MS     Memory Limit:65536KB </p>
+<p>Description</p>
+<p>给出一个序列，判断该序列是不是某二叉搜索树的中序遍历序列，如果是输出”Yes”，否则输出”No”。</p>
+<p>一颗带权二叉树是一颗二叉搜索树（二叉排序树），当且仅当对于任意一个节点，他的左子树中的所有权值小于当前节点的权值，且它的右子树中的所有权值均大于当前节点的权值。</p>
+<p>Input Format</p>
+<p>第一行T (T/leq10 )代表数据组数。</p>
+<p>每组数据包括两行：</p>
+<p>第一行为一个整数N ($1/leq x /leq 400),表示序列的长度。</p>
+<p>第二行包含N 个整数，表示这个这个序列，序列中的数的x 范围为($1/leq x/leq 100000)。</p>
+<p>OutPut Format</p>
+<p>每组数据，如果是二叉搜索树的中序遍历序列输出”Yes”,否则输出”No”。</p>
+<p>Input<br>2<br>4<br>1 2 3 4<br>4<br>1 3 2 4</p>
+<p>OutPut<br>Yes<br>No</p>
+<p>###答案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[402]=&#123;0&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int s;</span><br><span class="line">    cin&gt;&gt;s;</span><br><span class="line">    for(int k=0;k&lt;s;k++)</span><br><span class="line">    &#123;</span><br><span class="line">    int flag=0;</span><br><span class="line">    int n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(int i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">           cin&gt;&gt;a[i]; </span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=0;i&lt;n-1;i++)</span><br><span class="line">    &#123;</span><br><span class="line">            if(a[i]&gt;a[i+1])</span><br><span class="line">             &#123;   flag=1;break;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(flag==0)</span><br><span class="line">       cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;</span><br><span class="line">    else</span><br><span class="line">       cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#D  最小距离查询</p>
+<p>###题目及要求<br>Accept:2     Submit:433<br>Time Limit:1000MS     Memory Limit:65536KB </p>
+<p>Description</p>
+<p>给定一个由小写字母a到z组成的字符串S，其中第i个字符为S[i]（下标从0开始）。你需要完成下面两个操作：</p>
+<p>INSERT c</p>
+<p>其中c是一个待输入的字符。你需要在字符串的末尾添加这个字符。保证输入的字符同样是a到z之间的一个小写字母。</p>
+<p>QUERY x</p>
+<p>其中x是一个输入的整数下标。对于这个询问，你需要回答在S当中和S[x]相等且与x最近的距离。输入保证x在当前字符串中合法。</p>
+<p>例如S = “abcaba”，如果我们操作：<br>INSERT a    </p>
+<p>则在S的末端加一个字符a，S变成”abcabaa”。</p>
+<p>接下来操作<br>QUERY 0</p>
+<p>由于S[0] = a，在S中出现的离他最近的a在下标为3的位置上，距离为3 - 0 = 3。因此应当输出3。</p>
+<p>接下来，如果<br>QUERY 4</p>
+<p>S[4] = b，S中离它最近的b出现在下标为1处，距离为4 - 1 = 3。同样应当输出3。</p>
+<p>给定初始字符串S和若干操作，对于每个QUERY，你需要求出相应的距离。</p>
+<p>InputFormat</p>
+<p>输入的第一*行是一个正整数T (T≤20 )，表示测试数据的组数。</p>
+<p>每组输入数据的第一行是一个初始串S。第二行是一个正整数m (1≤m≤100000 )，表示总共操作的数量。接下来m行，每行表示一个操作。操作的格式如上所述。</p>
+<p>数据保证在任何情况下，S的长度不会超过100000。</p>
+<p>OutputFormat</p>
+<p>对于每个QUERY，输出所求的最小距离。如果S中其它位置都不存在和它相同的字符，输出-1。</p>
+<p>SampleInput<br>2<br>axb<br>3<br>INSERT a<br>QUERY 0<br>QUERY 1<br>explore<br>3<br>INSERT r<br>QUERY 7<br>QUERY 1</p>
+<p>SampleOutput<br>3<br>-1<br>2<br>-1</p>
+<p>Hint</p>
+<p>由于输入数据较大，C/C++中推荐使用scanf进行读入以获得更快的读入速度。同时请注意算法复杂度。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/13/CentOS7.3系统Tomcat无法正常启动解决（8005端口不能启动）/" rel="next" title="Linux系统Tomcat无法正常启动">
+                <i class="fa fa-chevron-left"></i> Linux系统Tomcat无法正常启动
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/13/设计模式-04-行为型模式详解/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/myimg/1.gif"
+                alt="CycloneKid" />
+            
+              <p class="site-author-name" itemprop="name">CycloneKid</p>
+              <p class="site-description motion-element" itemprop="description">一位在校大学生的学习笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JavaStudenttwo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:sk18810356@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kuang-da-zhi-yin/activities" target="_blank" title="ZhiHu">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>ZhiHu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/eagleuniversityeye" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-skype"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/kinglearnjava" title="我的CSDN博客" target="_blank">我的CSDN博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.sina.com.cn/u/1069913250" title="我的新浪博客" target="_blank">我的新浪博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CycloneKid</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
