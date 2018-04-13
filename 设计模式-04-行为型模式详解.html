@@ -81,9 +81,9 @@
 
 <meta name="description" content="承接上一篇博客设计模式-03-结构型模式详解，本篇讨论结构型模式的相关内容 ##一.责任链模式使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这个对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理为止。  ####代码举例： 1234567891011121314151617181920212223242526272829303132333435363738394">
 <meta name="keywords" content="叼">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:title" content="CycloneKid的个人博客">
-<meta property="og:url" content="http://yoursite.com/2018/04/13/设计模式-04-行为型模式详解/index.html">
+<meta property="og:url" content="http://yoursite.com/设计模式-04-行为型模式详解.html">
 <meta property="og:site_name" content="CycloneKid的个人博客">
 <meta property="og:description" content="承接上一篇博客设计模式-03-结构型模式详解，本篇讨论结构型模式的相关内容 ##一.责任链模式使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这个对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理为止。  ####代码举例： 1234567891011121314151617181920212223242526272829303132333435363738394">
 <meta property="og:locale" content="zh-Hans">
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/13/设计模式-04-行为型模式详解/"/>
+  <link rel="canonical" href="http://yoursite.com/设计模式-04-行为型模式详解.html"/>
 
 
 
@@ -274,86 +274,24 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/设计模式-04-行为型模式详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CycloneKid">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/myimg/1.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CycloneKid的个人博客">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline"></h1>
-        
+	<h1 class="post-title" itemprop="name headline"></h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T14:42:24+08:00">
-                2018-04-13
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>承接上一篇博客<a href="http://blog.csdn.net/eagleuniversityeye/article/details/79406999" target="_blank" rel="noopener">设计模式-03-结构型模式详解</a>，本篇讨论结构型模式的相关内容</p>
+      <div class="post-body">
+        
+        
+          <p>承接上一篇博客<a href="http://blog.csdn.net/eagleuniversityeye/article/details/79406999" target="_blank" rel="noopener">设计模式-03-结构型模式详解</a>，本篇讨论结构型模式的相关内容</p>
 <p>##一.责任链模式<br>使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这个对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理为止。</p>
 <p><img src="http://img.blog.csdn.net/20180228233215653?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>####代码举例：</p>
@@ -397,61 +335,15 @@
 <p><img src="http://img.blog.csdn.net/20180301120631007?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>####代码举例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Man;</span><br><span class="line">class Woman;</span><br><span class="line">//行为</span><br><span class="line">class Action</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void GetManConclusion(Man* concreteElementA)=0;</span><br><span class="line">	virtual void GetWomanConclusion(Woman* concreteElementB)=0;</span><br><span class="line">&#125;;</span><br><span class="line">//成功</span><br><span class="line">class Success : public Action</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void GetManConclusion(Man* concreteElementA)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;男人成功时，背后有个伟大的女人&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void GetWomanConclusion(Woman* concreteElementB)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;女人成功时，背后有个没用的男人&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//失败</span><br><span class="line">class Failure : public Action</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void GetManConclusion(Man* concreteElementA)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;男人失败时，背后有个伟大的女人&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual void GetWomanConclusion(Woman* concreteElementB)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;女人失败时，背后有个没用的男人&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//抽象人类</span><br><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Accept(Action* visitor)=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//男人</span><br><span class="line">class Man : public Person</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Accept(Action* visitor)</span><br><span class="line">	&#123;</span><br><span class="line">		visitor-&gt;GetManConclusion(this);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//女人</span><br><span class="line">class Woman : public Person</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void Accept(Action* visitor)</span><br><span class="line">	&#123;</span><br><span class="line">		visitor-&gt;GetWomanConclusion(this);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//对象结构类</span><br><span class="line">class ObjectStructure</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	vector&lt;Person*&gt; m_personList;</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">	void Add(Person* p)</span><br><span class="line">	&#123;</span><br><span class="line">		m_personList.push_back(p);</span><br><span class="line">	&#125;</span><br><span class="line">	void Display(Action* a)</span><br><span class="line">	&#123;</span><br><span class="line">		vector&lt;Person*&gt;::iterator p = m_personList.begin();</span><br><span class="line">		while (p!=m_personList.end())</span><br><span class="line">		&#123;</span><br><span class="line">			(*p)-&gt;Accept(a);</span><br><span class="line">			p++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ObjectStructure * os= new ObjectStructure();</span><br><span class="line">	os-&gt;Add(new Man());</span><br><span class="line">	os-&gt;Add(new Woman());</span><br><span class="line"></span><br><span class="line">	Success* success = new Success();</span><br><span class="line">	os-&gt;Display(success);</span><br><span class="line"></span><br><span class="line">	Failure* fl = new Failure();</span><br><span class="line">	os-&gt;Display(fl);</span><br><span class="line">	</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/04/13/北邮计院13上机真题/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/13/设计模式-03-结构型模式详解/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -504,7 +396,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

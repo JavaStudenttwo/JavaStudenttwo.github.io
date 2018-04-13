@@ -81,9 +81,9 @@
 
 <meta name="description" content="根据系列博客的第一篇设计模式-01-设计模式简介及分类对24设计模式的分类，本文对第一类—–创建型模式，进行举例分析 ##一.工厂模式修正了简单工厂模式中不遵守开放－封闭原则。工厂方法模式把选择判断移到了客户端去实现，如果想添加新功能就不用修改原来的类，直接修改客户端即可  ####代码举例： 1234567891011121314151617181920212223242526272829303">
 <meta name="keywords" content="叼">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:title" content="CycloneKid的个人博客">
-<meta property="og:url" content="http://yoursite.com/2018/04/13/设计模式-02-创建型模式详解/index.html">
+<meta property="og:url" content="http://yoursite.com/设计模式-02-创建型模式详解.html">
 <meta property="og:site_name" content="CycloneKid的个人博客">
 <meta property="og:description" content="根据系列博客的第一篇设计模式-01-设计模式简介及分类对24设计模式的分类，本文对第一类—–创建型模式，进行举例分析 ##一.工厂模式修正了简单工厂模式中不遵守开放－封闭原则。工厂方法模式把选择判断移到了客户端去实现，如果想添加新功能就不用修改原来的类，直接修改客户端即可  ####代码举例： 1234567891011121314151617181920212223242526272829303">
 <meta property="og:locale" content="zh-Hans">
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/13/设计模式-02-创建型模式详解/"/>
+  <link rel="canonical" href="http://yoursite.com/设计模式-02-创建型模式详解.html"/>
 
 
 
@@ -267,86 +267,24 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/设计模式-02-创建型模式详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CycloneKid">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/myimg/1.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CycloneKid的个人博客">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline"></h1>
-        
+	<h1 class="post-title" itemprop="name headline"></h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T14:42:40+08:00">
-                2018-04-13
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>根据系列博客的第一篇<a href="http://blog.csdn.net/eagleuniversityeye/article/details/78909570" target="_blank" rel="noopener">设计模式-01-设计模式简介及分类</a>对24设计模式的分类，本文对第一类—–创建型模式，进行举例分析</p>
+      <div class="post-body">
+        
+        
+          <p>根据系列博客的第一篇<a href="http://blog.csdn.net/eagleuniversityeye/article/details/78909570" target="_blank" rel="noopener">设计模式-01-设计模式简介及分类</a>对24设计模式的分类，本文对第一类—–创建型模式，进行举例分析</p>
 <p>##一.工厂模式<br>修正了简单工厂模式中不遵守开放－封闭原则。工厂方法模式把选择判断移到了客户端去实现，如果想添加新功能就不用修改原来的类，直接修改客户端即可</p>
 <p><img src="http://img.blog.csdn.net/20180228231609834?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>####代码举例：</p>
@@ -366,57 +304,15 @@
 <p><img src="http://img.blog.csdn.net/20180228232145198?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>####代码举例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Prototype //抽象基类 </span><br><span class="line">&#123; </span><br><span class="line">private:</span><br><span class="line">	string m_strName;</span><br><span class="line">public: </span><br><span class="line">	Prototype(string strName)&#123; m_strName = strName; &#125;</span><br><span class="line">	Prototype() &#123; m_strName = &quot; &quot;; &#125;</span><br><span class="line">	void Show() </span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;m_strName&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	virtual Prototype* Clone() = 0 ; </span><br><span class="line">&#125; ; </span><br><span class="line"></span><br><span class="line">// class ConcretePrototype1 </span><br><span class="line">class ConcretePrototype1 : public Prototype </span><br><span class="line">&#123; </span><br><span class="line">public: </span><br><span class="line">	ConcretePrototype1(string strName) : Prototype(strName)&#123;&#125;</span><br><span class="line">	ConcretePrototype1()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	virtual Prototype* Clone() </span><br><span class="line">	&#123; </span><br><span class="line">		ConcretePrototype1 *p = new ConcretePrototype1() ; </span><br><span class="line">		*p = *this ; //复制对象 </span><br><span class="line">		return p ; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; ; </span><br><span class="line"></span><br><span class="line">// class ConcretePrototype2 </span><br><span class="line">class ConcretePrototype2 : public Prototype </span><br><span class="line">&#123; </span><br><span class="line">public: </span><br><span class="line">	ConcretePrototype2(string strName) : Prototype(strName)&#123;&#125;</span><br><span class="line">	ConcretePrototype2()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	virtual Prototype* Clone() </span><br><span class="line">	&#123; </span><br><span class="line">		ConcretePrototype2 *p = new ConcretePrototype2() ; </span><br><span class="line">		*p = *this ; //复制对象 </span><br><span class="line">		return p ; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; ; </span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ConcretePrototype1* test = new ConcretePrototype1(&quot;小王&quot;);</span><br><span class="line">	ConcretePrototype2* test2 = (ConcretePrototype2*)test-&gt;Clone();</span><br><span class="line">	test-&gt;Show();</span><br><span class="line">	test2-&gt;Show();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/04/13/设计模式-03-结构型模式详解/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -469,7 +365,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
