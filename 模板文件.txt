@@ -1,4 +1,4 @@
----
+﻿---
 title: Nginx入门
 date: 2018-04-13 10:32:17
 categories:
@@ -7,7 +7,7 @@ tags:
 	- Nginx
 	- 服务器
 photos:
-	- /myimg/5.jpg
+	- http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/1.gif
 ---
 Nginx入门
 <!--more-->
