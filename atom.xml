@@ -45,6 +45,32 @@
   </entry>
   
   <entry>
+    <title>Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决</title>
+    <link href="http://yoursite.com/2018/04/16/Solr%E5%88%86%E6%9E%90%E5%99%A8IK-analyzer%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%94%99%E8%AF%AFjava.lang.AbstractMethodError%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2018/04/16/Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决/</id>
+    <published>2018-04-16T02:32:17.000Z</published>
+    <updated>2018-04-16T15:02:25.911Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在给Solr配置IK-analyzer时报错，java.lang.AbstractMethodError，在网上查了查发现是IK版本过低，但是找了好久也没找到新版的，于是自己做了一个Jar包<br><a id="more"></a></p><h1 id="一-Solr使用中文分析器IK-analyzer时报错java-lang-AbstractMethodError"><a href="#一-Solr使用中文分析器IK-analyzer时报错java-lang-AbstractMethodError" class="headerlink" title="一.Solr使用中文分析器IK-analyzer时报错java.lang.AbstractMethodError"></a>一.Solr使用中文分析器IK-analyzer时报错java.lang.AbstractMethodError</h1><p>错误如下图所示</p><p><img src="http://img.blog.csdn.net/20180416222435094?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>原因是Solr的版本和IK-analyzer的版本不匹配，IK-analyzer版本过低，现在大家能够在网上下到的IK-analyzer版本一般都是IKAnalyzer2012FF_u1，这个版本已经相当老旧了，这里提供一个较新版本的IK-analyzer：<a href="https://download.csdn.net/download/eagleuniversityeye/10353515" target="_blank" rel="noopener">ik_analyzer_solr6</a></p><p>更换Jar后</p><p><img src="http://img.blog.csdn.net/20180416224716213?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><h1 id="二-IK-analyzer中文分析器"><a href="#二-IK-analyzer中文分析器" class="headerlink" title="二.IK-analyzer中文分析器"></a>二.IK-analyzer中文分析器</h1><p>IKAnalyzer是一个开源的，基于java语言开发的轻量级的中文分词工具包。它是以开源项目Lucene为应用主体的，结合词典分词和文法分析算法的中文分词组件。新版本的IKAnalyzer3.0则发展为 面向Java的公用分词组件，独立于Lucene项目，同时提供了对Lucene的默认优化实现。</p><p>使用Solr一般都会配置中文分析器，IKAnalyzer是应用最广的中文分析器，但是在网上能下载到IKAnalyzer版本都比较旧，这是因为这是个开源项目而且原作者好像不太想维护了，所以Solr不断更新，IKAnalyzer一直不更新，渐渐地IKAnalyzer就不能用了</p><p>不过，好在IKAnalyzer的作者把项目发布到了GitHub上，虽然没有见到IKAnalyzer的最新的Jar包但是这个项目还是更新了，而且Solr6可以使用，我fork了这个项目并把它打成了jar包，链接放到了上边</p><h1 id="三-IK-analyzer的配置"><a href="#三-IK-analyzer的配置" class="headerlink" title="三.IK-analyzer的配置"></a>三.IK-analyzer的配置</h1><p>##3.1 把中文分析器添加到工程中。<br>把ik-analyzer-solr6.jar文件添加到Tomcat中的solr工程的lib目录下<br>把扩展词典文件ext_stopword.dic、配置文件IKAnalyzer.cfg.xml放到solr工程的WEB-INF/classes目录下</p><p><img src="http://img.blog.csdn.net/20180416224809505?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>##3.2 配置一个FieldType，制定使用IKAnalyzer<br>修改schema.xml文件（版本不同文件名称可能不同，6以上版本应该是managed-schema文件）<br>修改Solr的schema.xml文件，添加FieldType：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;fieldType name=&quot;text_ik&quot; class=&quot;solr.TextField&quot;&gt;</span><br><span class="line">  &lt;analyzer class=&quot;org.wltea.analyzer.lucene.IKAnalyzer&quot;/&gt;</span><br><span class="line">&lt;/fieldType&gt;</span><br></pre></td></tr></table></figure><p>##3.3 配置业务域，type制定使用自定义的FieldType<br>设置业务系统Field，在schema.xml文件中添加：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;field name=&quot;item_title&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_sell_point&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_price&quot;  type=&quot;long&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_image&quot; type=&quot;string&quot; indexed=&quot;false&quot; stored=&quot;true&quot; /&gt;</span><br><span class="line">&lt;field name=&quot;item_category_name&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;true&quot; /&gt;</span><br><span class="line">&lt;field name=&quot;item_keywords&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;false&quot; multiValued=&quot;true&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_title&quot; dest=&quot;item_keywords&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_sell_point&quot; dest=&quot;item_keywords&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_category_name&quot; dest=&quot;item_keywords&quot;/&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在给Solr配置IK-analyzer时报错，java.lang.AbstractMethodError，在网上查了查发现是IK版本过低，但是找了好久也没找到新版的，于是自己做了一个Jar包&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Solr" scheme="http://yoursite.com/categories/Solr/"/>
+    
+    
+      <category term="Solr" scheme="http://yoursite.com/tags/Solr/"/>
+    
+      <category term="IK-analyzer" scheme="http://yoursite.com/tags/IK-analyzer/"/>
+    
+      <category term="分析器" scheme="http://yoursite.com/tags/%E5%88%86%E6%9E%90%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JSP技术-02-内置对象_作用域_EL表达式_JSTL标签库</title>
     <link href="http://yoursite.com/2018/04/15/JSP%E6%8A%80%E6%9C%AF-02-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1_%E4%BD%9C%E7%94%A8%E5%9F%9F_EL%E8%A1%A8%E8%BE%BE%E5%BC%8F_JSTL%E6%A0%87%E7%AD%BE%E5%BA%93%20/"/>
     <id>http://yoursite.com/2018/04/15/JSP技术-02-内置对象_作用域_EL表达式_JSTL标签库 /</id>
@@ -93,32 +119,6 @@
   </entry>
   
   <entry>
-    <title>Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决</title>
-    <link href="http://yoursite.com/2018/04/13/Solr%E5%88%86%E6%9E%90%E5%99%A8IK-analyzer%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%94%99%E8%AF%AFjava.lang.AbstractMethodError%E8%A7%A3%E5%86%B3/"/>
-    <id>http://yoursite.com/2018/04/13/Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决/</id>
-    <published>2018-04-13T02:32:17.000Z</published>
-    <updated>2018-04-16T14:55:12.728Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天在给Solr配置IK-analyzer时报错，java.lang.AbstractMethodError，在网上查了查发现是IK版本过低，但是找了好久也没找到新版的，于是自己做了一个Jar包<br><a id="more"></a></p><h1 id="一-Solr使用中文分析器IK-analyzer时报错java-lang-AbstractMethodError"><a href="#一-Solr使用中文分析器IK-analyzer时报错java-lang-AbstractMethodError" class="headerlink" title="一.Solr使用中文分析器IK-analyzer时报错java.lang.AbstractMethodError"></a>一.Solr使用中文分析器IK-analyzer时报错java.lang.AbstractMethodError</h1><p>错误如下图所示</p><p><img src="http://img.blog.csdn.net/20180416222435094?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>原因是Solr的版本和IK-analyzer的版本不匹配，IK-analyzer版本过低，现在大家能够在网上下到的IK-analyzer版本一般都是IKAnalyzer2012FF_u1，这个版本已经相当老旧了，这里提供一个较新版本的IK-analyzer：<a href="https://download.csdn.net/download/eagleuniversityeye/10353515" target="_blank" rel="noopener">ik_analyzer_solr6</a></p><p>更换Jar后</p><p><img src="http://img.blog.csdn.net/20180416224716213?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><h1 id="二-IK-analyzer中文分析器"><a href="#二-IK-analyzer中文分析器" class="headerlink" title="二.IK-analyzer中文分析器"></a>二.IK-analyzer中文分析器</h1><p>IKAnalyzer是一个开源的，基于java语言开发的轻量级的中文分词工具包。它是以开源项目Lucene为应用主体的，结合词典分词和文法分析算法的中文分词组件。新版本的IKAnalyzer3.0则发展为 面向Java的公用分词组件，独立于Lucene项目，同时提供了对Lucene的默认优化实现。</p><p>使用Solr一般都会配置中文分析器，IKAnalyzer是应用最广的中文分析器，但是在网上能下载到IKAnalyzer版本都比较旧，这是因为这是个开源项目而且原作者好像不太想维护了，所以Solr不断更新，IKAnalyzer一直不更新，渐渐地IKAnalyzer就不能用了</p><p>不过，好在IKAnalyzer的作者把项目发布到了GitHub上，虽然没有见到IKAnalyzer的最新的Jar包但是这个项目还是更新了，而且Solr6可以使用，我fork了这个项目并把它打成了jar包，链接放到了上边</p><h1 id="三-IK-analyzer的配置"><a href="#三-IK-analyzer的配置" class="headerlink" title="三.IK-analyzer的配置"></a>三.IK-analyzer的配置</h1><p>##3.1 把中文分析器添加到工程中。<br>把ik-analyzer-solr6.jar文件添加到Tomcat中的solr工程的lib目录下<br>把扩展词典文件ext_stopword.dic、配置文件IKAnalyzer.cfg.xml放到solr工程的WEB-INF/classes目录下</p><p><img src="http://img.blog.csdn.net/20180416224809505?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>##3.2 配置一个FieldType，制定使用IKAnalyzer<br>修改schema.xml文件（版本不同文件名称可能不同，6以上版本应该是managed-schema文件）<br>修改Solr的schema.xml文件，添加FieldType：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;fieldType name=&quot;text_ik&quot; class=&quot;solr.TextField&quot;&gt;</span><br><span class="line">  &lt;analyzer class=&quot;org.wltea.analyzer.lucene.IKAnalyzer&quot;/&gt;</span><br><span class="line">&lt;/fieldType&gt;</span><br></pre></td></tr></table></figure><p>##3.3 配置业务域，type制定使用自定义的FieldType<br>设置业务系统Field，在schema.xml文件中添加：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;field name=&quot;item_title&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_sell_point&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_price&quot;  type=&quot;long&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_image&quot; type=&quot;string&quot; indexed=&quot;false&quot; stored=&quot;true&quot; /&gt;</span><br><span class="line">&lt;field name=&quot;item_category_name&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;true&quot; /&gt;</span><br><span class="line">&lt;field name=&quot;item_keywords&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;false&quot; multiValued=&quot;true&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_title&quot; dest=&quot;item_keywords&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_sell_point&quot; dest=&quot;item_keywords&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_category_name&quot; dest=&quot;item_keywords&quot;/&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天在给Solr配置IK-analyzer时报错，java.lang.AbstractMethodError，在网上查了查发现是IK版本过低，但是找了好久也没找到新版的，于是自己做了一个Jar包&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Solr" scheme="http://yoursite.com/categories/Solr/"/>
-    
-    
-      <category term="Solr" scheme="http://yoursite.com/tags/Solr/"/>
-    
-      <category term="IK-analyzer" scheme="http://yoursite.com/tags/IK-analyzer/"/>
-    
-      <category term="分析器" scheme="http://yoursite.com/tags/%E5%88%86%E6%9E%90%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Nginx入门</title>
     <link href="http://yoursite.com/2018/04/13/Nginx%E5%85%A5%E9%97%A8/"/>
     <id>http://yoursite.com/2018/04/13/Nginx入门/</id>
@@ -136,9 +136,9 @@
       <category term="Nginx服务器" scheme="http://yoursite.com/categories/Nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     
-      <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
       <category term="Nginx" scheme="http://yoursite.com/tags/Nginx/"/>
+    
+      <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
@@ -212,9 +212,9 @@
       <category term="私服搭建" scheme="http://yoursite.com/categories/Maven/%E7%A7%81%E6%9C%8D%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Maven私服" scheme="http://yoursite.com/tags/Maven%E7%A7%81%E6%9C%8D/"/>
-    
       <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="Maven私服" scheme="http://yoursite.com/tags/Maven%E7%A7%81%E6%9C%8D/"/>
     
   </entry>
   
