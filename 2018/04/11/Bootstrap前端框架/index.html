@@ -90,7 +90,7 @@
 <meta property="og:description" content="Bootstrap框架的介绍及简单使用">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/27.jpg">
-<meta property="og:updated_time" content="2018-04-15T01:16:54.345Z">
+<meta property="og:updated_time" content="2018-04-16T07:47:13.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bootstrap前端框架">
 <meta name="twitter:description" content="Bootstrap框架的介绍及简单使用">
@@ -404,7 +404,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/27.jpg" rel="gallery_cjg0yjc3d0006ogvgf4qzcewe"
+                 href="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/27.jpg" rel="gallery_cjg1xsfv60000movgqsiosua4"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/27.jpg" itemprop="contentUrl"/>
               </a>
@@ -440,7 +440,48 @@
 <p>2）导入Bootstrap的支持文件，包括Bootstrap的样式文件，JQuery核心文件和Bootstrap的核心文件（此模板中的文件路径使用的是网络路径，可以根据使用情况改为本地路径）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="3-4-响应式布局相关的设置"><a href="#3-4-响应式布局相关的设置" class="headerlink" title="3.4 响应式布局相关的设置"></a>3.4 响应式布局相关的设置</h2><p>Bootstrap在3个&lt; meta &gt; 标签中设置和响应式布局相关的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>其中name=”viewport”的标签中的设置比较重要<br>viewport指的是设备的屏幕上用来显示网页的区域<br>content的设置参数：<br>|属性名|属性描述|举例|<br>|:——–|:——–|:–|<br>|width|设置layout viewport的宽度，可以是一个正整数，也可以是字符串”width-device”(即根据设备宽度自动缩放)|width=800px或width=device-width(常用)|<br>|initial-scale|设置页面的初始缩放值，为一个数字，可以带小数|initial-scale=1(1表示按1:1缩放)|<br>|minimum-scale|允许用户的最小缩放值，为一个数字，可以带小数|minimum-scale=0.5|<br>|maximum-scale|允许用户的最大缩放值，为一个数字，可以带小数|maximum-scale=1.5|<br>|height|设置layout viewport的高度，这个属性并不重要，很少使用||<br>|user-scalable|是否允许用户进行缩放，值为”no”或”yes”, no代表不允许,yes代表允许|user-scalable=yes(如果选no上面的设置全废了)|</p>
+<p>其中name=”viewport”的标签中的设置比较重要<br>viewport指的是设备的屏幕上用来显示网页的区域<br>content的设置参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性名</th>
+<th style="text-align:left">属性描述</th>
+<th style="text-align:left">举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">设置layout viewport的宽度，可以是一个正整数，也可以是字符串”width-device”(即根据设备宽度自动缩放)</td>
+<td style="text-align:left">width=800px或width=device-width(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">initial-scale</td>
+<td style="text-align:left">设置页面的初始缩放值，为一个数字，可以带小数</td>
+<td style="text-align:left">initial-scale=1(1表示按1:1缩放)</td>
+</tr>
+<tr>
+<td style="text-align:left">minimum-scale</td>
+<td style="text-align:left">允许用户的最小缩放值，为一个数字，可以带小数</td>
+<td style="text-align:left">minimum-scale=0.5</td>
+</tr>
+<tr>
+<td style="text-align:left">maximum-scale</td>
+<td style="text-align:left">允许用户的最大缩放值，为一个数字，可以带小数</td>
+<td style="text-align:left">maximum-scale=1.5</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">设置layout viewport的高度，这个属性并不重要，很少使用</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">user-scalable</td>
+<td style="text-align:left">是否允许用户进行缩放，值为”no”或”yes”, no代表不允许,yes代表允许</td>
+<td style="text-align:left">user-scalable=yes(如果选no上面的设置全废了)</td>
+</tr>
+</tbody>
+</table>
 <h1 id="四-Bootstrap导学"><a href="#四-Bootstrap导学" class="headerlink" title="四.Bootstrap导学"></a>四.Bootstrap导学</h1><p>由于Bootstrap的官网给了非常详细的教程，下面根据教程做几个示例示范一下如何使用该教程Bootstrap，如果需要使用Bootstrap，直接看官网教程即可</p>
 <h2 id="4-1-分页条"><a href="#4-1-分页条" class="headerlink" title="4.1 分页条"></a>4.1 分页条</h2><p><a href="https://github.com/JavaStudenttwo/HeimaShop.git" target="_blank" rel="noopener">黑马商城</a>商品分类分页展示部分，未使用Bootstrap时的效果：</p>
 <p><img src="http://img.blog.csdn.net/20171011222613882?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>

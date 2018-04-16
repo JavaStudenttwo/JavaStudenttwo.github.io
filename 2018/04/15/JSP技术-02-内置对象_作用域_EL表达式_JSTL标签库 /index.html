@@ -90,7 +90,7 @@
 <meta property="og:description" content="和JSP相关的一些被封装的内容，主要涉及底层工作原理">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/28.jpg">
-<meta property="og:updated_time" content="2018-04-15T01:01:22.534Z">
+<meta property="og:updated_time" content="2018-04-16T07:43:14.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP技术-02-内置对象_作用域_EL表达式_JSTL标签库">
 <meta name="twitter:description" content="和JSP相关的一些被封装的内容，主要涉及底层工作原理">
@@ -404,7 +404,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/28.jpg" rel="gallery_cjg0yjc3q000bogvg4d4e608l"
+                 href="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/28.jpg" rel="gallery_cjg1xsfw8000cmovg59zbc3jt"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/28.jpg" itemprop="contentUrl"/>
               </a>
@@ -418,7 +418,63 @@
 
       
         <p>和JSP相关的一些被封装的内容，主要涉及底层工作原理<br><a id="more"></a></p>
-<h1 id="一-九大内置对象"><a href="#一-九大内置对象" class="headerlink" title="一.九大内置对象"></a>一.九大内置对象</h1><p>几乎每个JSP页面在处理数据时都要用到request，response，context等对象，所以，JSP2.0规范中定义9个内置对象（隐式对象），将在JSP中常用的对象封装成了内置对象。在JSP页面中，内置对象是由JSP默认创建的，可以直接在JSP页面中直接使用，不需要创建<br>9个内置对象的类型及功能：<br>|   名称    |类型     | 功能  |<br>| :——– | :——–| :– |<br>| out  |javax.servlet.JspWriter  |  用于在页面中输出内容   |<br>|    request  |  javax.servlet.http.HttpServletRequest  |   获取用户的请求信息 |<br>|    reponse   |  javax.servlet.http.HttpServletResponse  | 服务器返回信息给浏览器  |<br>|config|javax.servlet.ServletConfig|封装了服务器的配置，可以用来获得初始化参数|<br>|session|javax.servlet.http.HttpSession|可以用来获取服务器端存储的信息|<br>|application|javax.servlet.ServletContext|所有请求共享的信息|<br>|page|java.lang.Object|当前页面经过转换后的Servlet类的实例|<br>|pageContext|javax.servlet.jsp.PageContext|JSP页面容器，可以用来或取该JSP页面中的属性和对象的值|<br>|exception|java.lang.Throwable|JSP页面的异常信息|</p>
+<h1 id="一-九大内置对象"><a href="#一-九大内置对象" class="headerlink" title="一.九大内置对象"></a>一.九大内置对象</h1><p>几乎每个JSP页面在处理数据时都要用到request，response，context等对象，所以，JSP2.0规范中定义9个内置对象（隐式对象），将在JSP中常用的对象封装成了内置对象。在JSP页面中，内置对象是由JSP默认创建的，可以直接在JSP页面中直接使用，不需要创建<br>9个内置对象的类型及功能：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th style="text-align:center">类型</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>out</td>
+<td style="text-align:center">javax.servlet.JspWriter</td>
+<td>用于在页面中输出内容</td>
+</tr>
+<tr>
+<td>request</td>
+<td style="text-align:center">javax.servlet.http.HttpServletRequest</td>
+<td>获取用户的请求信息</td>
+</tr>
+<tr>
+<td>reponse</td>
+<td style="text-align:center">javax.servlet.http.HttpServletResponse</td>
+<td>服务器返回信息给浏览器</td>
+</tr>
+<tr>
+<td>config</td>
+<td style="text-align:center">javax.servlet.ServletConfig</td>
+<td>封装了服务器的配置，可以用来获得初始化参数</td>
+</tr>
+<tr>
+<td>session</td>
+<td style="text-align:center">javax.servlet.http.HttpSession</td>
+<td>可以用来获取服务器端存储的信息</td>
+</tr>
+<tr>
+<td>application</td>
+<td style="text-align:center">javax.servlet.ServletContext</td>
+<td>所有请求共享的信息</td>
+</tr>
+<tr>
+<td>page</td>
+<td style="text-align:center">java.lang.Object</td>
+<td>当前页面经过转换后的Servlet类的实例</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td style="text-align:center">javax.servlet.jsp.PageContext</td>
+<td>JSP页面容器，可以用来或取该JSP页面中的属性和对象的值</td>
+</tr>
+<tr>
+<td>exception</td>
+<td style="text-align:center">java.lang.Throwable</td>
+<td>JSP页面的异常信息</td>
+</tr>
+</tbody>
+</table>
 <h2 id="pageContext对象："><a href="#pageContext对象：" class="headerlink" title="pageContext对象："></a>pageContext对象：</h2><p>pageContext对象的功能：</p>
 <p>1）可以用来获取其他内置对象</p>
 <p>在JSP页面中，使用pageContext对象的getXXX方法可以获取JSP页面中的其他8个内置对象，如想要获取当前页面的request对象，可以调用pageContext的getPageContext( )方法。pageContext对象是javax.servlet.jsp.PageContext类的实例对象，它代表当前JSP页面的运行环境</p>
@@ -474,7 +530,43 @@
 </table>
 <hr>
 <p><strong>使用findAttribute( )方法查找域中的属性时，会按照page，request，session和application的顺序（范围越小，优先级越高）进行查找</strong></p>
-<h1 id="二-四大域"><a href="#二-四大域" class="headerlink" title="二.四大域"></a>二.四大域</h1><p>“域”的本质是一块存储数据的区域，底层是一个map集合，集合的键是属性名，值是属性值。由于这个map集合是属于JSP中的对象的，而不同对象的生命周期和作用范围又不同，所以“域”的作用范围也不同，只能在固定的范围内存取值。<br>JSP页面中有4个对象常被用来存取，传递数据，它们被称为4大域<br>4大域的名称，类型及作用范围：<br>|  属性值     |  作用范围   | 域名称 |域对象类型|<br>| :——– |:——–|:—–|:—–|<br>|  PageScope | 当前页面 | pageContext|PageContext|<br>|   RequestScope  | 即从浏览器发出请求到服务器收到请求开始处理，通常只涉及一个页面，如果有请求的转发，则涉及多个页面   | request |HttpServletRequest|<br>|  SessionScope   |  浏览器和服务器的一次会话，可以在多个请求间共享数据  | session |HttpSession|<br>|   Application   | 整个项目范围，可以在多次会话间共享数据   |application |ServletContext|</p>
+<h1 id="二-四大域"><a href="#二-四大域" class="headerlink" title="二.四大域"></a>二.四大域</h1><p>“域”的本质是一块存储数据的区域，底层是一个map集合，集合的键是属性名，值是属性值。由于这个map集合是属于JSP中的对象的，而不同对象的生命周期和作用范围又不同，所以“域”的作用范围也不同，只能在固定的范围内存取值。<br>JSP页面中有4个对象常被用来存取，传递数据，它们被称为4大域<br>4大域的名称，类型及作用范围：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性值</th>
+<th style="text-align:left">作用范围</th>
+<th style="text-align:left">域名称</th>
+<th style="text-align:left">域对象类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">PageScope</td>
+<td style="text-align:left">当前页面</td>
+<td style="text-align:left">pageContext</td>
+<td style="text-align:left">PageContext</td>
+</tr>
+<tr>
+<td style="text-align:left">RequestScope</td>
+<td style="text-align:left">即从浏览器发出请求到服务器收到请求开始处理，通常只涉及一个页面，如果有请求的转发，则涉及多个页面</td>
+<td style="text-align:left">request</td>
+<td style="text-align:left">HttpServletRequest</td>
+</tr>
+<tr>
+<td style="text-align:left">SessionScope</td>
+<td style="text-align:left">浏览器和服务器的一次会话，可以在多个请求间共享数据</td>
+<td style="text-align:left">session</td>
+<td style="text-align:left">HttpSession</td>
+</tr>
+<tr>
+<td style="text-align:left">Application</td>
+<td style="text-align:left">整个项目范围，可以在多次会话间共享数据</td>
+<td style="text-align:left">application</td>
+<td style="text-align:left">ServletContext</td>
+</tr>
+</tbody>
+</table>
 <h1 id="三-EL表达式"><a href="#三-EL表达式" class="headerlink" title="三.EL表达式"></a>三.EL表达式</h1><p>EL全名为Expression Language，是一种简单易用的数据访问语言，EL表达式简化了获取Servlet域对象中数据的方式，使JSP页面中的代码更加简洁</p>
 <h2 id="3-1-EL的语法"><a href="#3-1-EL的语法" class="headerlink" title="3.1 EL的语法"></a>3.1 EL的语法</h2><p>EL表达式的形式：${ 表达式 }</p>
 <h2 id="3-2-EL表达式与内置对象"><a href="#3-2-EL表达式与内置对象" class="headerlink" title="3.2 EL表达式与内置对象"></a>3.2 EL表达式与内置对象</h2><h2 id="3-2-1-EL表达式可以获取4大域中的属性的值（直接调用域对象）"><a href="#3-2-1-EL表达式可以获取4大域中的属性的值（直接调用域对象）" class="headerlink" title="3.2.1 EL表达式可以获取4大域中的属性的值（直接调用域对象）"></a>3.2.1 EL表达式可以获取4大域中的属性的值（直接调用域对象）</h2><p>例如：获取页面中的name属性的值 { pageScope.name }</p>
@@ -570,19 +662,121 @@
 </tr>
 </tbody>
 </table>
-<h2 id="3-2-4-获取pageContext中的属性的值"><a href="#3-2-4-获取pageContext中的属性的值" class="headerlink" title="3.2.4 获取pageContext中的属性的值"></a>3.2.4 获取pageContext中的属性的值</h2><p>获取项目路径：<br>|使用JSP标签|使用EL表达式|<br>|:——–|:——–|<br>|&lt;%=((HttpServletRequest)pageContext.getRequest()).getContextPath()%&gt;|${ pageContext.request.contextPath }|</p>
+<h2 id="3-2-4-获取pageContext中的属性的值"><a href="#3-2-4-获取pageContext中的属性的值" class="headerlink" title="3.2.4 获取pageContext中的属性的值"></a>3.2.4 获取pageContext中的属性的值</h2><p>获取项目路径：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">使用JSP标签</th>
+<th style="text-align:left">使用EL表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&lt;%=((HttpServletRequest)pageContext.getRequest()).getContextPath()%&gt;</td>
+<td style="text-align:left">${ pageContext.request.contextPath }</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3-2-5-获取项目的初始化参数（web-xml文件中的配置信息）"><a href="#3-2-5-获取项目的初始化参数（web-xml文件中的配置信息）" class="headerlink" title="3.2.5 获取项目的初始化参数（web.xml文件中的配置信息）"></a>3.2.5 获取项目的初始化参数（web.xml文件中的配置信息）</h2><p>web.xml文件的配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;context-param&gt;</span><br><span class="line">        &lt;param-name&gt;namespace&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;/e3mall&lt;/param-value&gt;</span><br><span class="line">    &lt;/context-param&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;context-param&gt;</span><br><span class="line">	&lt;param-name&gt;namespace&lt;/param-name&gt;</span><br><span class="line">	&lt;param-value&gt;/e3mall&lt;/param-value&gt;</span><br><span class="line">&lt;/context-param&gt;</span><br></pre></td></tr></table></figure>
 <p>获取namespace参数的值：${ intitParam.person }<br>5.获取cookie中的值<br>${ cookie.loginUser }<br>EL获取cookie不是直接调用底层的方法，而是对底层方法进行了部分封装和加强。cookie没有根据属性名操作属性值的API，EL的底层使用request.getCookies( )获得所有cookie，然后遍历并存放到Map中（Map &lt; name,obj &gt;）</p>
-<h1 id="四-JSTL技术："><a href="#四-JSTL技术：" class="headerlink" title="四.JSTL技术："></a>四.JSTL技术：</h1><p>JSTL全名为JSP Standard Tag Library ，即JSP标准标签库。使用JSP标签可以降低JSP页面的复杂度，增强代码的重用性，所以经常使用JSP的人就制作了很多自定义的JSP标签，但是制作这些标签的人并不属于同一个团队，所以有很多标签功能相同，导致学习和使用很不方便，为了方便开发者的使用，sun公司制作了一套标准标签库，即JSTL<br>JSTL是由5个不同功能的标签库组成的：<br>|标签库|对应的URL|标签前缀|<br>|:——–|:——–|:–|<br>|Core|<a href="http://java.sun.com/jsp/jstl/core|c|" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core|c|</a><br>|I18N|<a href="http://java.sun.com/jsp/jstl/fmt|fmt|" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/fmt|fmt|</a><br>|SQL|<a href="http://java.sun.com/jsp/jstl/sql|sql|" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/sql|sql|</a><br>|XML|<a href="http://java.sun.com/jsp/jstl/xml|x|" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/xml|x|</a><br>|Functions|<a href="http://java.sun.com/jsp/jstl/functions|fn|" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/functions|fn|</a></p>
+<h1 id="四-JSTL技术："><a href="#四-JSTL技术：" class="headerlink" title="四.JSTL技术："></a>四.JSTL技术：</h1><p>JSTL全名为JSP Standard Tag Library ，即JSP标准标签库。使用JSP标签可以降低JSP页面的复杂度，增强代码的重用性，所以经常使用JSP的人就制作了很多自定义的JSP标签，但是制作这些标签的人并不属于同一个团队，所以有很多标签功能相同，导致学习和使用很不方便，为了方便开发者的使用，sun公司制作了一套标准标签库，即JSTL<br>JSTL是由5个不同功能的标签库组成的：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">标签库</th>
+<th style="text-align:left">对应的URL</th>
+<th style="text-align:left">标签前缀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Core</td>
+<td style="text-align:left"><a href="http://java.sun.com/jsp/jstl/core" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core</a></td>
+<td style="text-align:left">c</td>
+</tr>
+<tr>
+<td style="text-align:left">I18N</td>
+<td style="text-align:left"><a href="http://java.sun.com/jsp/jstl/fmt" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/fmt</a></td>
+<td style="text-align:left">fmt</td>
+</tr>
+<tr>
+<td style="text-align:left">SQL</td>
+<td style="text-align:left"><a href="http://java.sun.com/jsp/jstl/sql" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/sql</a></td>
+<td style="text-align:left">sql</td>
+</tr>
+<tr>
+<td style="text-align:left">XML</td>
+<td style="text-align:left"><a href="http://java.sun.com/jsp/jstl/xml" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/xml</a></td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left">Functions</td>
+<td style="text-align:left"><a href="http://java.sun.com/jsp/jstl/functions" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/functions</a></td>
+<td style="text-align:left">fn</td>
+</tr>
+</tbody>
+</table>
 <p>常用的JSTL标签：</p>
 <h2 id="4-1-if标签"><a href="#4-1-if标签" class="headerlink" title="4.1 if标签"></a>4.1 if标签</h2><p>用于执行判断</p>
 <p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例一：</span><br><span class="line">&lt;c:if test=&quot;Boolean&quot;&gt;</span><br><span class="line">	$&#123;param&#125;</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure></p>
 <p>Boolean的值为true则执行标签体中的内容，查找4大域中param属性的内容并显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例二：</span><br><span class="line">&lt;c:if test=&quot;Boolean&quot; var=&quot;param&quot; scope=&quot;Scope&quot; [scope=&quot;&#123;page|request&#125;&quot;]&gt;</span><br><span class="line">	$&#123;param&#125;</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure></p>
-<p>将Boolean的值（true或false）赋给param属性，并存放到指定的作用域，若Boolean的值为true执行标签体中内容<br>|属性名|功能|<br>|:——–|:——–|<br>|test属性|用于设置逻辑表达式，逻辑表达式的计算结果为true则执行标签体中内容，为false则不执行|<br>|var属性|用于指定逻辑表达式的结果的名称|<br>|scope属性 |用于指定var属性声明的变量的作用范围，默认值为page|</p>
+<p>将Boolean的值（true或false）赋给param属性，并存放到指定的作用域，若Boolean的值为true执行标签体中内容</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性名</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">test属性</td>
+<td style="text-align:left">用于设置逻辑表达式，逻辑表达式的计算结果为true则执行标签体中内容，为false则不执行</td>
+</tr>
+<tr>
+<td style="text-align:left">var属性</td>
+<td style="text-align:left">用于指定逻辑表达式的结果的名称</td>
+</tr>
+<tr>
+<td style="text-align:left">scope属性</td>
+<td style="text-align:left">用于指定var属性声明的变量的作用范围，默认值为page</td>
+</tr>
+</tbody>
+</table>
 <h2 id="4-2-forEach标签"><a href="#4-2-forEach标签" class="headerlink" title="4.2 forEach标签"></a>4.2 forEach标签</h2><p>用于迭代集合中的元素</p>
 <p>1）基本语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例一：</span><br><span class="line">&lt;c:forEach var=&quot;item&quot; varStatus=&quot;status&quot; items=&quot;$&#123;pageBean&#125;&quot;&gt;</span><br><span class="line">	&lt;td align=&quot;center&quot; width=&quot;18%&quot;&gt;$&#123;status.count&#125;&lt;/td&gt;	</span><br><span class="line">	&lt;td align=&quot;center&quot; width=&quot;17%&quot;&gt;$&#123;item.pname&#125;&lt;/td&gt;					</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure></p>
-<p>迭代pageBean集合，并输出元素的序号（从1开始），及元素的pname属性的值<br>|属性名|功能|<br>|:——–|:——–|<br>|var属性|指定当前迭代到的元素保存到page域中的名称|<br>|items属性|指定被迭代的集合对象|<br>|varStatus属性|指定存有当前迭代到的元素的信息的对象保存到page域中的名称|<br>|begin属性|指定从集合的第几个元素开始迭代，默认从0开始|<br>|step属性|指定迭代因子的增量|</p>
+<p>迭代pageBean集合，并输出元素的序号（从1开始），及元素的pname属性的值</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性名</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">var属性</td>
+<td style="text-align:left">指定当前迭代到的元素保存到page域中的名称</td>
+</tr>
+<tr>
+<td style="text-align:left">items属性</td>
+<td style="text-align:left">指定被迭代的集合对象</td>
+</tr>
+<tr>
+<td style="text-align:left">varStatus属性</td>
+<td style="text-align:left">指定存有当前迭代到的元素的信息的对象保存到page域中的名称</td>
+</tr>
+<tr>
+<td style="text-align:left">begin属性</td>
+<td style="text-align:left">指定从集合的第几个元素开始迭代，默认从0开始</td>
+</tr>
+<tr>
+<td style="text-align:left">step属性</td>
+<td style="text-align:left">指定迭代因子的增量</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <p>2）varStatus属性：</p>
 <p>用于设置一个javax.servelt.jsp.jstl.core.LoopTagStatus类型的变量，这个变量包含了从集合中取出的元素的状态信息</p>
