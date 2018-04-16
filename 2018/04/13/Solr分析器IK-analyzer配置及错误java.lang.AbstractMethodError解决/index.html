@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Solr,IK-analyzer,分析器," />
 
 
 
@@ -81,17 +81,20 @@
 
 
 
-<meta name="description" content="这里放的文章完成度不高，如果想通过我的文章进行学习，请通过链接访问我的CSDN">
-<meta name="keywords" content="叼">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CycloneKid的个人博客">
-<meta property="og:url" content="http://yoursite.com/categories/Maven/index.html">
+<meta name="description" content="今天在给Solr配置IK-analyzer时报错，java.lang.AbstractMethodError，在网上查了查发现是IK版本过低，但是找了好久也没找到新版的，于是自己做了一个Jar包">
+<meta name="keywords" content="Solr,IK-analyzer,分析器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决/index.html">
 <meta property="og:site_name" content="CycloneKid的个人博客">
-<meta property="og:description" content="这里放的文章完成度不高，如果想通过我的文章进行学习，请通过链接访问我的CSDN">
+<meta property="og:description" content="今天在给Solr配置IK-analyzer时报错，java.lang.AbstractMethodError，在网上查了查发现是IK版本过低，但是找了好久也没找到新版的，于是自己做了一个Jar包">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/30.jpg">
+<meta property="og:updated_time" content="2018-04-16T14:55:12.728Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CycloneKid的个人博客">
-<meta name="twitter:description" content="这里放的文章完成度不高，如果想通过我的文章进行学习，请通过链接访问我的CSDN">
+<meta name="twitter:title" content="Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决">
+<meta name="twitter:description" content="今天在给Solr配置IK-analyzer时报错，java.lang.AbstractMethodError，在网上查了查发现是IK版本过低，但是找了好久也没找到新版的，于是自己做了一个Jar包">
+<meta name="twitter:image" content="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/30.jpg">
 
 
 
@@ -121,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/Maven/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决/"/>
 
 
 
 
 
-  <title>分类: Maven | CycloneKid的个人博客</title>
+  <title>Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决 | CycloneKid的个人博客</title>
   
 
 
@@ -146,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -284,55 +287,206 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Maven<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CycloneKid">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CycloneKid的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/07/Maven-01-私服搭建及使用/" itemprop="url">
-              
-                <span itemprop="name">Maven-01-私服搭建及使用</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Solr分析器IK-analyzer配置及错误java.lang.AbstractMethodError解决</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-07T10:32:17+08:00"
-              content="2018-04-07" >
-          04-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T10:32:17+08:00">
+                2018-04-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Solr/" itemprop="url" rel="index">
+                    <span itemprop="name">Solr</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/30.jpg" rel="gallery_cjg2d55vn000mlcvght3bak3i"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://p76pkrm2a.bkt.clouddn.com/image/hexo/next/30.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
 
+          
+          </div>
+        </div>
+      
+
+      
+        <p>今天在给Solr配置IK-analyzer时报错，java.lang.AbstractMethodError，在网上查了查发现是IK版本过低，但是找了好久也没找到新版的，于是自己做了一个Jar包<br><a id="more"></a></p>
+<h1 id="一-Solr使用中文分析器IK-analyzer时报错java-lang-AbstractMethodError"><a href="#一-Solr使用中文分析器IK-analyzer时报错java-lang-AbstractMethodError" class="headerlink" title="一.Solr使用中文分析器IK-analyzer时报错java.lang.AbstractMethodError"></a>一.Solr使用中文分析器IK-analyzer时报错java.lang.AbstractMethodError</h1><p>错误如下图所示</p>
+<p><img src="http://img.blog.csdn.net/20180416222435094?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>原因是Solr的版本和IK-analyzer的版本不匹配，IK-analyzer版本过低，现在大家能够在网上下到的IK-analyzer版本一般都是IKAnalyzer2012FF_u1，这个版本已经相当老旧了，这里提供一个较新版本的IK-analyzer：<a href="https://download.csdn.net/download/eagleuniversityeye/10353515" target="_blank" rel="noopener">ik_analyzer_solr6</a></p>
+<p>更换Jar后</p>
+<p><img src="http://img.blog.csdn.net/20180416224716213?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h1 id="二-IK-analyzer中文分析器"><a href="#二-IK-analyzer中文分析器" class="headerlink" title="二.IK-analyzer中文分析器"></a>二.IK-analyzer中文分析器</h1><p>IKAnalyzer是一个开源的，基于java语言开发的轻量级的中文分词工具包。它是以开源项目Lucene为应用主体的，结合词典分词和文法分析算法的中文分词组件。新版本的IKAnalyzer3.0则发展为 面向Java的公用分词组件，独立于Lucene项目，同时提供了对Lucene的默认优化实现。</p>
+<p>使用Solr一般都会配置中文分析器，IKAnalyzer是应用最广的中文分析器，但是在网上能下载到IKAnalyzer版本都比较旧，这是因为这是个开源项目而且原作者好像不太想维护了，所以Solr不断更新，IKAnalyzer一直不更新，渐渐地IKAnalyzer就不能用了</p>
+<p>不过，好在IKAnalyzer的作者把项目发布到了GitHub上，虽然没有见到IKAnalyzer的最新的Jar包但是这个项目还是更新了，而且Solr6可以使用，我fork了这个项目并把它打成了jar包，链接放到了上边</p>
+<h1 id="三-IK-analyzer的配置"><a href="#三-IK-analyzer的配置" class="headerlink" title="三.IK-analyzer的配置"></a>三.IK-analyzer的配置</h1><p>##3.1 把中文分析器添加到工程中。<br>把ik-analyzer-solr6.jar文件添加到Tomcat中的solr工程的lib目录下<br>把扩展词典文件ext_stopword.dic、配置文件IKAnalyzer.cfg.xml放到solr工程的WEB-INF/classes目录下</p>
+<p><img src="http://img.blog.csdn.net/20180416224809505?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZWFnbGV1bml2ZXJzaXR5ZXll/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>##3.2 配置一个FieldType，制定使用IKAnalyzer<br>修改schema.xml文件（版本不同文件名称可能不同，6以上版本应该是managed-schema文件）<br>修改Solr的schema.xml文件，添加FieldType：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;fieldType name=&quot;text_ik&quot; class=&quot;solr.TextField&quot;&gt;</span><br><span class="line">  &lt;analyzer class=&quot;org.wltea.analyzer.lucene.IKAnalyzer&quot;/&gt;</span><br><span class="line">&lt;/fieldType&gt;</span><br></pre></td></tr></table></figure>
+<p>##3.3 配置业务域，type制定使用自定义的FieldType<br>设置业务系统Field，在schema.xml文件中添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;field name=&quot;item_title&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_sell_point&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_price&quot;  type=&quot;long&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</span><br><span class="line">&lt;field name=&quot;item_image&quot; type=&quot;string&quot; indexed=&quot;false&quot; stored=&quot;true&quot; /&gt;</span><br><span class="line">&lt;field name=&quot;item_category_name&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;true&quot; /&gt;</span><br><span class="line">&lt;field name=&quot;item_keywords&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;false&quot; multiValued=&quot;true&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_title&quot; dest=&quot;item_keywords&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_sell_point&quot; dest=&quot;item_keywords&quot;/&gt;</span><br><span class="line">&lt;copyField source=&quot;item_category_name&quot; dest=&quot;item_keywords&quot;/&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Solr/" rel="tag"># Solr</a>
+          
+            <a href="/tags/IK-analyzer/" rel="tag"># IK-analyzer</a>
+          
+            <a href="/tags/分析器/" rel="tag"># 分析器</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/13/Nginx入门/" rel="next" title="Nginx入门">
+                <i class="fa fa-chevron-left"></i> Nginx入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/14/Hexo+GitHub搭建个人博客/" rel="prev" title="Hexo+GitHub搭建个人博客">
+                Hexo+GitHub搭建个人博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -340,6 +494,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -360,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -474,6 +641,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-Solr使用中文分析器IK-analyzer时报错java-lang-AbstractMethodError"><span class="nav-number">1.</span> <span class="nav-text">一.Solr使用中文分析器IK-analyzer时报错java.lang.AbstractMethodError</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-IK-analyzer中文分析器"><span class="nav-number">2.</span> <span class="nav-text">二.IK-analyzer中文分析器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-IK-analyzer的配置"><span class="nav-number">3.</span> <span class="nav-text">三.IK-analyzer的配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -627,6 +810,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
