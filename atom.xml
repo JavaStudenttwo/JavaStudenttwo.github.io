@@ -136,9 +136,9 @@
       <category term="Nginx服务器" scheme="http://yoursite.com/categories/Nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     
-      <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
       <category term="Nginx" scheme="http://yoursite.com/tags/Nginx/"/>
+    
+      <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
@@ -212,9 +212,9 @@
       <category term="私服搭建" scheme="http://yoursite.com/categories/Maven/%E7%A7%81%E6%9C%8D%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Maven私服" scheme="http://yoursite.com/tags/Maven%E7%A7%81%E6%9C%8D/"/>
-    
       <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="Maven私服" scheme="http://yoursite.com/tags/Maven%E7%A7%81%E6%9C%8D/"/>
     
   </entry>
   
