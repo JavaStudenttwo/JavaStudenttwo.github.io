@@ -59,8 +59,8 @@
         <category>Nginx服务器</category>
       </categories>
       <tags>
-        <tag>Nginx</tag>
         <tag>服务器</tag>
+        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -97,8 +97,8 @@
         <category>私服搭建</category>
       </categories>
       <tags>
-        <tag>服务器</tag>
         <tag>Maven私服</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
